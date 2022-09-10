@@ -13,6 +13,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(binding.root)
         playVideo()
 
+
     }
 
 
