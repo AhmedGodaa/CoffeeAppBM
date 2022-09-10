@@ -1,8 +1,9 @@
-package com.banquemisr.coffeeapp_banquemisr
+package com.banquemisr.coffeeapp_banquemisr.presentation.splash
 
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.banquemisr.coffeeapp_banquemisr.R
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
