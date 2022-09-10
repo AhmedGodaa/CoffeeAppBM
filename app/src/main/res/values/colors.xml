@@ -7,4 +7,26 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Component -->
+    <color name="yellow">#FFCC0A</color>
+    <color name="red">#ED4136</color>
+    <color name="Aqua">#2DE6EA</color>
+    <color name="blue">#3A52Fc</color>
+    <color name="primary">#F8E8D4</color>
+
+
+    <!--    Background    -->
+    <color name="backgroundPrimaryDark">#090622</color>
+    <color name="backgroundSecondaryDark">#13102B</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="backgroundPrimaryLight">#FFFFFF</color>
+    <color name="backgroundSecondaryLight">#F5F6FA</color>
+
+    <!--    Text    -->
+    <color name="textPrimaryLight">#0F0A39</color>
+    <color name="textPrimaryDark">#FFFFFF</color>
+    <color name="textSecondary">#7B7890</color>
+
 </resources>
