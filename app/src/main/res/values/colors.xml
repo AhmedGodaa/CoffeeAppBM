@@ -24,6 +24,10 @@
     <color name="backgroundPrimaryLight">#FFFFFF</color>
     <color name="backgroundSecondaryLight">#F5F6FA</color>
 
+    <color name="background">#F2F2F2</color>
+    <color name="buttonColor">#B98068</color>
+    <color name="textColor">#8C746A</color>
+
     <!--    Text    -->
     <color name="textPrimaryLight">#0F0A39</color>
     <color name="textPrimaryDark">#FFFFFF</color>

@@ -32,4 +32,14 @@
     <string name="input_username">Input Username</string>
     <string name="title_activity_compose">ComposeActivity</string>
     <string name="skip">Skip</string>
+
+
+    <string name="toolbar_string">Menu</string>
+    <string name="preferences_toolbar_text">Preferences</string>
+
+
+
+
+
+
 </resources>
