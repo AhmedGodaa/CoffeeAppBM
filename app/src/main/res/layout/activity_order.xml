@@ -54,27 +54,127 @@
             android:contentDescription="@string/app_name" />
     </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/imgOrderContainer"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutContainerOrder"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_150sdp"
-        android:background="@color/primary"
-        android:scaleType="centerCrop"
-        android:src="@drawable/img_pattern"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolBarLayout" />
+        app:layout_constraintTop_toBottomOf="@id/toolBarLayout">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/_100sdp"
-        android:src="@drawable/ic_macciato"
-        app:layout_constraintBottom_toBottomOf="@id/imgOrderContainer"
-        app:layout_constraintEnd_toEndOf="@id/imgOrderContainer"
-        app:layout_constraintStart_toStartOf="@id/imgOrderContainer"
-        app:layout_constraintTop_toTopOf="@id/imgOrderContainer" />
+        <ImageView
+            android:id="@+id/imgOrderContainer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"
+            android:background="@color/primary"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_pattern"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_100sdp"
+            android:src="@drawable/ic_macciato"
+            app:layout_constraintBottom_toBottomOf="@id/imgOrderContainer"
+            app:layout_constraintEnd_toEndOf="@id/imgOrderContainer"
+            app:layout_constraintStart_toStartOf="@id/imgOrderContainer"
+            app:layout_constraintTop_toTopOf="@id/imgOrderContainer" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layoutContainerOrder">
+
+        <View
+            android:id="@+id/view8"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="90dp"
+            android:background="#8C746A" />
+
+        <TextView
+            android:id="@+id/sizeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="21dp"
+            android:text="Size"
+            app:layout_constraintBottom_toTopOf="@+id/view10"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@id/view8" />
+
+        <ImageView
+            android:id="@+id/smallSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="33dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/group_copy_3"
+            app:layout_constraintBottom_toTopOf="@+id/view10"
+            app:layout_constraintEnd_toStartOf="@+id/mediumSize" />
+
+        <ImageView
+            android:id="@+id/mediumSize"
+            android:layout_width="24dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/group_copy_2"
+            app:layout_constraintBottom_toBottomOf="@+id/smallSize"
+            app:layout_constraintEnd_toStartOf="@+id/largeSize" />
+
+        <ImageView
+            android:id="@+id/largeSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="85dp"
+            android:src="@drawable/group_copy_2"
+            app:layout_constraintBottom_toBottomOf="@+id/mediumSize"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <TextView
+            android:id="@+id/itemPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:text="Price"
+            app:layout_constraintBottom_toTopOf="@+id/view8"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/itemName" />
+
+        <TextView
+            android:id="@+id/Additions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Additions"
+            app:layout_constraintBottom_toTopOf="@+id/view11"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/view9" />
+
+        <TextView
+            android:id="@+id/sugarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sugar"
+            app:layout_constraintBottom_toTopOf="@+id/view9"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/view10" />
+
+        <View
+            android:id="@+id/view10"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="70dp"
+
+            android:background="#8C746A"
+            app:layout_constraintTop_toBottomOf="@+id/view8" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
