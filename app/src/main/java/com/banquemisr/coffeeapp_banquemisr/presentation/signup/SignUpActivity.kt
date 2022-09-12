@@ -30,7 +30,7 @@ class SignUpActivity : AppCompatActivity() {
                 SignInActivity::class.java
             )
         }
-        binding.btnSignUp.setOnClickListener { v ->
+        binding.btnSignUp.setOnClickListener {
             if (isValidSignUpDetails()) {
                 signUp()
             }

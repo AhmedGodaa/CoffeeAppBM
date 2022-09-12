@@ -1,6 +1,7 @@
 package com.banquemisr.data.remote
 
 import com.banquemisr.coffeeapp_banquemisr.domain.model.User
+import com.banquemisr.coffeeapp_banquemisr.domain.model.UserOrder
 import retrofit2.http.POST
 import com.banquemisr.data.remote.dto.SignInDto
 import com.banquemisr.data.remote.dto.SignUpDto
@@ -13,4 +14,7 @@ interface ApiService {
 
     @POST("auth/signup")
     fun signUp(@Body user: User?): Call<SignUpDto?>?
+
+    @POST("/order")
+    fun order(@Body userOrder: UserOrder)
 }
