@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.banquemisr.coffeeapp_banquemisr.R
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivityMainBinding
-import com.banquemisr.coffeeapp_banquemisr.domain.Menu
+import com.banquemisr.coffeeapp_banquemisr.domain.model.Menu
 
 class MainActivity : AppCompatActivity(), MenuListener {
     lateinit var binding: ActivityMainBinding

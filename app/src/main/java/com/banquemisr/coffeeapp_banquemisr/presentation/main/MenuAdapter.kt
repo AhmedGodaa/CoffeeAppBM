@@ -1,12 +1,11 @@
 package com.banquemisr.coffeeapp_banquemisr.presentation.main
 
-import android.content.Context
 import androidx.recyclerview.widget.RecyclerView
 import com.banquemisr.coffeeapp_banquemisr.presentation.main.MenuAdapter.MenuViewHolder
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import com.banquemisr.coffeeapp_banquemisr.databinding.ItemContainerMenuBinding
-import com.banquemisr.coffeeapp_banquemisr.domain.Menu
+import com.banquemisr.coffeeapp_banquemisr.domain.model.Menu
 import java.util.ArrayList
 
 class MenuAdapter(
