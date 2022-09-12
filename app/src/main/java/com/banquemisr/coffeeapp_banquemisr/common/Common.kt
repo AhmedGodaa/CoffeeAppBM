@@ -2,6 +2,7 @@ package com.banquemisr.coffeeapp_banquemisr.common
 
 import android.content.Context
 import android.content.Intent
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import com.banquemisr.coffeeapp_banquemisr.R
 
@@ -25,6 +26,10 @@ class Common {
             val intent = Intent(context, activity)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             context.startActivity(intent)
+        }
+
+         fun showToast(context: Context, message: String) {
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
         }
 
 
