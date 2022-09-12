@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.main.MainActivity">
+    tools:context=".presentation.order.OrderActivity">
 
     <RelativeLayout
         android:id="@+id/toolBarLayout"
@@ -36,7 +36,7 @@
             android:layout_alignParentBottom="true"
             android:layout_gravity="center_vertical"
             android:gravity="center"
-            android:text="@string/menu"
+            android:text="@string/preferences"
             android:textColor="@color/primaryDark" />
 
         <com.makeramen.roundedimageview.RoundedImageView
@@ -54,16 +54,27 @@
             android:contentDescription="@string/app_name" />
     </RelativeLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <ImageView
+        android:id="@+id/imgOrderContainer"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/matchConstraint"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="@dimen/_150sdp"
+        android:background="@color/primary"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_pattern"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolBarLayout">
+        app:layout_constraintTop_toBottomOf="@id/toolBarLayout" />
 
-    </androidx.recyclerview.widget.RecyclerView>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_100sdp"
+        android:src="@drawable/ic_macciato"
+        app:layout_constraintBottom_toBottomOf="@id/imgOrderContainer"
+        app:layout_constraintEnd_toEndOf="@id/imgOrderContainer"
+        app:layout_constraintStart_toStartOf="@id/imgOrderContainer"
+        app:layout_constraintTop_toTopOf="@id/imgOrderContainer" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

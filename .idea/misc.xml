@@ -8,14 +8,17 @@
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable-mdpi/shape_button_one.xml" value="0.129" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable-mdpi/shape_edit_text_one.xml" value="0.129" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable/ic_logo.xml" value="0.129" />
-        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/activity_main.xml" value="0.13903985507246377" />
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/activity_order.xml" value="0.16666666666666666" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/activity_sign_in.xml" value="0.17552083333333332" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/activity_sign_up.xml" value="0.16145833333333334" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/activity_splash.xml" value="0.16666666666666666" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/activity_welcome.xml" value="0.16145833333333334" />
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/fragment_details.xml" value="0.3333333333333333" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/fragment_welcome_first.xml" value="0.16145833333333334" />
-        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/fragment_welcome_second.xml" value="0.17552083333333332" />
-        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/fragment_welcome_third.xml" value="0.17552083333333332" />
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/fragment_welcome_second.xml" value="0.16145833333333334" />
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/ic_back.xml" value="0.17552083333333332" />
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/item_container_menu.xml" value="0.16666666666666666" />
       </map>
     </option>
   </component>
