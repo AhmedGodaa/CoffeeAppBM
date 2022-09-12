@@ -6,11 +6,18 @@ import com.banquemisr.coffeeapp_banquemisr.common.Constants
 
 class PreferencesManager(context: Context) {
     var sharedPreferences: SharedPreferences
+
+    init {
+        sharedPreferences =
+            context.getSharedPreferences(Constants.KEY_PREFERENCE_NAME, Context.MODE_PRIVATE)
+    }
+
     fun putBoolean(key: String?, value: Boolean?) {
         val editor = sharedPreferences.edit()
         editor.putBoolean(key, value!!)
         editor.apply()
     }
+
 
     fun putString(key: String?, value: String?) {
         val editor = sharedPreferences.edit()
@@ -32,8 +39,5 @@ class PreferencesManager(context: Context) {
         editor.apply()
     }
 
-    init {
-        sharedPreferences =
-            context.getSharedPreferences(Constants.KEY_PREFERENCE_NAME, Context.MODE_PRIVATE)
-    }
+
 }

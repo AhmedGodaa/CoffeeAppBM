@@ -5,12 +5,11 @@ import android.os.Bundle
 import android.util.Patterns
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.banquemisr.coffeeapp_banquemisr.common.Common
 import com.banquemisr.coffeeapp_banquemisr.common.Constants
 import com.banquemisr.coffeeapp_banquemisr.common.PreferencesManager
+import com.banquemisr.coffeeapp_banquemisr.common.showToast
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivitySignInBinding
 import com.banquemisr.coffeeapp_banquemisr.domain.model.User
-import com.banquemisr.coffeeapp_banquemisr.domain.viewModels.SignInViewModel
 import com.banquemisr.coffeeapp_banquemisr.presentation.main.MainActivity
 
 class SignInActivity : AppCompatActivity() {
@@ -44,15 +43,15 @@ class SignInActivity : AppCompatActivity() {
 
     private fun isValidSignInDetails(): Boolean {
         return if (binding.inputEmail.editableText.toString().trim().isEmpty()) {
-            Common.showToast(this, "Enter Email")
+            showToast("Enter Email")
             false
         } else if (!Patterns.EMAIL_ADDRESS.matcher(binding.inputEmail.editableText.toString())
                 .matches()
         ) {
-            Common.showToast(this, "Enter valid Email")
+            showToast("Enter valid Email")
             false
         } else if (binding.inputPassword.editableText.toString().trim().isEmpty()) {
-            Common.showToast(this, "Enter Password")
+            showToast("Enter Password")
             false
         } else {
             true
@@ -70,4 +69,6 @@ class SignInActivity : AppCompatActivity() {
             finish()
         }
     }
+
+
 }

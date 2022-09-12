@@ -4,11 +4,10 @@ import android.os.Bundle
 import android.util.Patterns
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.banquemisr.coffeeapp_banquemisr.common.Common.Companion.openActivity
-import com.banquemisr.coffeeapp_banquemisr.common.Common.Companion.showToast
+import com.banquemisr.coffeeapp_banquemisr.common.openActivity
+import com.banquemisr.coffeeapp_banquemisr.common.showToast
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivitySignUpBinding
 import com.banquemisr.coffeeapp_banquemisr.domain.model.User
-import com.banquemisr.coffeeapp_banquemisr.domain.viewModels.SignUpViewModel
 import com.banquemisr.coffeeapp_banquemisr.presentation.signin.SignInActivity
 
 class SignUpActivity : AppCompatActivity() {
@@ -24,9 +23,8 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun setListeners() {
-        binding.layoutHaveAccount.setOnClickListener { v ->
+        binding.layoutHaveAccount.setOnClickListener {
             openActivity(
-                applicationContext,
                 SignInActivity::class.java
             )
         }
@@ -39,18 +37,18 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun isValidSignUpDetails(): Boolean {
         return if (binding.inputUsername.text.toString().trim().isEmpty()) {
-            showToast(this, "Enter Name")
+            binding.inputUsername.error = "Input UserName"
             false
         } else if (binding.inputEmail.editableText.toString().trim().isEmpty()) {
-            showToast(this, "Enter Email")
+            showToast("Enter Email")
             false
         } else if (!Patterns.EMAIL_ADDRESS.matcher(binding.inputEmail.editableText.toString())
                 .matches()
         ) {
-            showToast(this, "Enter valid Email")
+            showToast("Enter valid Email")
             false
         } else if (binding.inputPassword.editableText.toString().trim().isEmpty()) {
-            showToast(this, "Enter Password")
+            showToast("Enter Password")
             false
         } else {
             true
@@ -70,6 +68,6 @@ class SignUpActivity : AppCompatActivity() {
 
                 )
         )
-        openActivity(this, SignInActivity::class.java)
+
     }
 }

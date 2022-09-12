@@ -6,9 +6,9 @@ import androidx.viewpager.widget.ViewPager
 import com.banquemisr.coffeeapp_banquemisr.presentation.main.MainActivity
 import com.banquemisr.coffeeapp_banquemisr.R
 import com.banquemisr.coffeeapp_banquemisr.presentation.signin.SignInActivity
-import com.banquemisr.coffeeapp_banquemisr.common.Common.Companion.openActivity
 import com.banquemisr.coffeeapp_banquemisr.common.Constants
 import com.banquemisr.coffeeapp_banquemisr.common.PreferencesManager
+import com.banquemisr.coffeeapp_banquemisr.common.openActivity
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivityWelcomeBinding
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
 
@@ -33,7 +33,6 @@ class WelcomeActivity : AppCompatActivity() {
     private fun setListeners() {
         binding.btnSkip.setOnClickListener {
            openActivity(
-                applicationContext,
                 SignInActivity::class.java
             )
         }
@@ -41,7 +40,7 @@ class WelcomeActivity : AppCompatActivity() {
     }
     private fun checkLoginStatus() {
         if (preferencesManager!!.getBoolean(Constants.KEY_IS_SIGNED_IN)) {
-            openActivity(this, MainActivity::class.java)
+            openActivity( MainActivity::class.java)
             finish()
         }
     }

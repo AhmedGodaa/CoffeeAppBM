@@ -13,13 +13,13 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class SignInRepository {
-    private val apiService: ApiService = ApiClient.getRetrofit().create<ApiService>(ApiService::class.java)
+    private val apiService: ApiService = ApiClient.getRetrofit().create(ApiService::class.java)
     fun getSignInResponseData(user: User?): LiveData<SignInDto> {
         val mutableLiveData: MutableLiveData<SignInDto> = MutableLiveData<SignInDto>()
         apiService.signIn(user)?.enqueue(object : Callback<SignInDto?> {
             override fun onResponse(call: Call<SignInDto?>, response: Response<SignInDto?>) {
                 Log.d(TAG, "onResponse: Succeeded")
-                mutableLiveData.setValue(response.body())
+                mutableLiveData.value = response.body()
             }
 
             override fun onFailure(call: Call<SignInDto?>, t: Throwable) {

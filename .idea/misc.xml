@@ -3,13 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable-mdpi/add.xml" value="0.1625" />
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable-mdpi/button_style_login.xml" value="0.1625" />
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable-mdpi/group_copy.xml" value="0.1625" />
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable-mdpi/ic_account.xml" value="0.1625" />
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable-mdpi/ic_add.xml" value="0.1625" />
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable-mdpi/ic_cub.xml" value="0.1625" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable-mdpi/ic_facebook.xml" value="0.129" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable-mdpi/ic_google_plus.xml" value="0.129" />
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable-mdpi/macciato.xml" value="0.1625" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable-mdpi/shape_button_one.xml" value="0.129" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable-mdpi/shape_edit_text_one.xml" value="0.129" />
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable-mdpi/vanilla.xml" value="0.1625" />
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable-mdpi/whipcream.xml" value="0.1" />
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable-xhdpi/ic_back.xml" value="0.1785" />
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable/ic_espresso.xml" value="0.1625" />
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable/ic_latte.xml" value="0.1625" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable/ic_logo.xml" value="0.129" />
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable/ic_two_sugar.xml" value="0.1625" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/activity_order.xml" value="0.22" />
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/activity_order.xml" value="0.23951670220326937" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/activity_sign_in.xml" value="0.17552083333333332" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/activity_sign_up.xml" value="0.16145833333333334" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/activity_splash.xml" value="0.16666666666666666" />
@@ -18,7 +31,7 @@
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/fragment_welcome_first.xml" value="0.16145833333333334" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/fragment_welcome_second.xml" value="0.16145833333333334" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/ic_back.xml" value="0.17552083333333332" />
-        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/item_container_menu.xml" value="0.16666666666666666" />
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/item_container_menu.xml" value="0.3333333333333333" />
         <entry key="..\:/BM nonesense/project/CoffeeApp-BanqueMisr/app/src/main/res/drawable-mdpi/button_style_login.xml" value="0.196" />
         <entry key="..\:/BM nonesense/project/CoffeeApp-BanqueMisr/app/src/main/res/drawable-mdpi/button_style_register.xml" value="0.2765" />
         <entry key="..\:/BM nonesense/project/CoffeeApp-BanqueMisr/app/src/main/res/drawable-mdpi/group_4_copy_2.xml" value="0.2765" />

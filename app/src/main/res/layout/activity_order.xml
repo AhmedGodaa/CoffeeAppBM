@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/orderBackground">
@@ -27,12 +26,13 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="25dp"
-                android:contentDescription="TODO"
+                android:contentDescription="@string/app_name"
+
                 android:src="@drawable/ic_baseline_arrow_back_24" />
 
             <TextView
                 android:id="@+id/toolbar_text"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginEnd="25dp"
@@ -40,7 +40,7 @@
                 android:gravity="center"
                 android:text="@string/preferences"
                 android:textAlignment="center"
-                android:textSize="22sp" />
+                android:textSize="@dimen/_15sdp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -56,7 +56,8 @@
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:contentDescription="header"
+
+                android:contentDescription="@string/app_name"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/header" />
 
@@ -65,29 +66,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:contentDescription="@string/app_name"
                 android:src="@drawable/macciato" />
 
         </RelativeLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/addToCartButton"
+            style="@style/button_style"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:style="@style/button_style"
-            android:text="Add to cart"
+            android:layout_margin="@dimen/_20sdp"
+            android:text="@string/add_to_cart"
             app:flow_firstVerticalBias="0."
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/guideline4"
-            app:layout_constraintStart_toEndOf="@id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view11"
             app:layout_constraintVertical_bias="0.68" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="29dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline4"
@@ -100,9 +97,11 @@
             android:id="@+id/itemName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="20dp"
-            android:text="Macciato"
-            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            android:text="@string/macciato"
+            app:layout_constraintStart_toStartOf="parent"
+
             app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
 
@@ -110,9 +109,10 @@
             android:id="@+id/Additions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Additions"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:text="@string/additions"
             app:layout_constraintBottom_toTopOf="@+id/view11"
-            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view9" />
 
         <View
@@ -154,73 +154,83 @@
             app:layout_constraintTop_toBottomOf="@+id/view9" />
 
         <ImageView
-            android:id="@+id/smallSize"
+
+            android:id="@+id/imgSmallSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="33dp"
             android:layout_marginBottom="16dp"
-            android:src="@drawable/size_small"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_mini_cub"
             app:layout_constraintBottom_toTopOf="@+id/view10"
-            app:layout_constraintEnd_toStartOf="@+id/mediumSize" />
+            app:layout_constraintEnd_toStartOf="@+id/imgMediumSize"
+            android:tintMode="src_in"
+            app:tint="@color/black"  />
 
         <ImageView
-            android:id="@+id/mediumSize"
+            android:id="@+id/imgMediumSize"
             android:layout_width="24dp"
+
             android:layout_height="36dp"
             android:layout_marginEnd="30dp"
+            android:contentDescription="@string/app_name"
             android:src="@drawable/size_medium"
-            app:layout_constraintBottom_toBottomOf="@+id/smallSize"
-            app:layout_constraintEnd_toStartOf="@+id/largeSize" />
+            app:layout_constraintBottom_toBottomOf="@+id/imgSmallSize"
+            app:layout_constraintEnd_toStartOf="@+id/imgLargeSize" />
 
         <ImageView
-            android:id="@+id/largeSize"
+            android:id="@+id/imgLargeSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="85dp"
+            android:contentDescription="@string/app_name"
             android:src="@drawable/size_medium"
-            app:layout_constraintBottom_toBottomOf="@+id/mediumSize"
+            app:layout_constraintBottom_toBottomOf="@+id/imgMediumSize"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/sizeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="30dp"
-
             android:layout_marginBottom="21dp"
-
-            android:text="Size"
+            android:text="@string/size"
             app:layout_constraintBottom_toTopOf="@+id/view10"
-            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view8" />
 
         <TextView
             android:id="@+id/itemPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
-            android:text="Price"
+            android:text="@string/price"
             app:layout_constraintBottom_toTopOf="@+id/view8"
-            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/itemName" />
 
         <TextView
             android:id="@+id/sugarText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sugar"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:text="@string/sugar"
             app:layout_constraintBottom_toTopOf="@+id/view9"
-            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view10" />
 
         <ImageView
             android:id="@+id/noSugar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:layout_marginStart="77dp"
             android:layout_marginBottom="20dp"
-            android:src="@drawable/sugar_none"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_no_sugar"
             app:layout_constraintBottom_toTopOf="@+id/view9"
             app:layout_constraintEnd_toStartOf="@+id/oneSugar"
             app:layout_constraintHorizontal_bias="0.5"
@@ -229,9 +239,11 @@
 
         <ImageView
             android:id="@+id/oneSugar"
-            android:layout_width="5dp"
-            android:layout_height="6dp"
-            android:src="@drawable/sugar_one"
+            android:layout_width="@dimen/_10sdp"
+
+            android:layout_height="@dimen/_10sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_one_sugar"
             app:layout_constraintBottom_toBottomOf="@+id/noSugar"
             app:layout_constraintEnd_toStartOf="@+id/twoSugar"
             app:layout_constraintHorizontal_bias="0.5"
@@ -241,7 +253,8 @@
             android:id="@+id/twoSugar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/sugar_two"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_two_sugar"
             app:layout_constraintBottom_toBottomOf="@+id/oneSugar"
             app:layout_constraintEnd_toStartOf="@+id/threeSugar"
             app:layout_constraintHorizontal_bias="0.5"
@@ -252,7 +265,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="34dp"
-            android:src="@drawable/sugar_three"
+
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_three_sugar"
             app:layout_constraintBottom_toBottomOf="@+id/twoSugar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -263,18 +278,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
+
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="25dp"
-            android:src="@drawable/whipcream"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_cream"
             app:layout_constraintBottom_toTopOf="@+id/view11"
             app:layout_constraintEnd_toStartOf="@+id/addDrawings"
             app:layout_constraintStart_toEndOf="@+id/Additions" />
 
         <ImageView
             android:id="@+id/addDrawings"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="140dp"
+            android:contentDescription="@string/app_name"
             android:src="@drawable/vanilla"
             app:layout_constraintBottom_toBottomOf="@+id/addCream"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -283,11 +302,12 @@
             android:id="@+id/totalText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="50dp"
-            android:text="Total"
+            android:text="@string/total"
             app:layout_constraintBottom_toTopOf="@+id/addToCartButton"
-            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view11" />
 
         <TextView
@@ -296,20 +316,20 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="27dp"
-            android:text="Price EGP"
+            android:text="@string/price_egp"
             app:layout_constraintBottom_toBottomOf="@+id/totalText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view11" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/removeButton"
+            style="@style/remove_button_style"
             android:layout_width="50dp"
             android:layout_height="48dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="25dp"
             android:layout_marginBottom="30dp"
-            android:style="@style/remove_button_style"
-            android:text="-"
+            android:text="@string/dash"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/view8"
             app:layout_constraintEnd_toEndOf="parent"
@@ -317,13 +337,13 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/addButton"
+            style="@style/add_button_style"
             android:layout_width="50dp"
             android:layout_height="48dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="30dp"
-            android:style="@style/add_button_style"
-            android:text="+"
+            android:text="@string/plus"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/view8"
             app:layout_constraintEnd_toStartOf="@+id/amountText"
@@ -336,8 +356,8 @@
             android:layout_marginTop="25dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="30dp"
-            android:text="1"
-            android:textSize="34sp"
+            android:text="@string/zero"
+            android:textSize="@dimen/_20sdp"
             app:layout_constraintBottom_toTopOf="@+id/view8"
             app:layout_constraintEnd_toStartOf="@+id/removeButton"
             app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />

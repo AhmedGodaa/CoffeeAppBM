@@ -10,4 +10,7 @@ object Constants {
     const val THEME_BOOLEAN = "theme_boolean"
     const val KEY_USERNAME = "username"
     const val KEY_TOKEN = "token"
+    const val KEY_MENU_ICON = "menuIcon"
+    const val KEY_MENU_NAME = "menuName"
+
 }

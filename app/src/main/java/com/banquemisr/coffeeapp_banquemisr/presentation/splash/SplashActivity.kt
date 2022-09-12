@@ -14,7 +14,6 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        playVideo()
         binding.imageView.setOnClickListener {
             val intent = Intent(this, WelcomeActivity::class.java)
             startActivity(intent)
@@ -24,18 +23,10 @@ class SplashActivity : AppCompatActivity() {
     }
 
 
-    override fun onResume() {
-        super.onResume()
-        playVideo()
 
-    }
 
-    private fun playVideo() {
-        val uri = Uri.parse("android.resource://" + packageName + "/" + R.raw.vid_splash)
-        binding.videoView.setVideoURI(uri)
-        binding.videoView.start()
-        binding.videoView.setOnCompletionListener { binding.videoView.start() }
 
-    }
+
+
 
 }
