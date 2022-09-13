@@ -5,11 +5,12 @@ import com.banquemisr.coffeeapp_banquemisr.presentation.menu.MenuAdapter.MenuVie
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import com.banquemisr.coffeeapp_banquemisr.databinding.ItemContainerMenuBinding
+import com.banquemisr.coffeeapp_banquemisr.domain.model.Coffee
 import com.banquemisr.coffeeapp_banquemisr.domain.model.Menu
 import java.util.ArrayList
 
 class MenuAdapter(
-    private val data: ArrayList<Menu>,
+    private val data: ArrayList<Coffee>,
     private val modelListener: MenuListener
 ) : RecyclerView.Adapter<MenuViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {
@@ -33,7 +34,7 @@ class MenuAdapter(
         RecyclerView.ViewHolder(
             binding.root
         ) {
-        fun setMenuData(model: Menu, position: Int) {
+        fun setMenuData(model: Coffee, position: Int) {
             binding.root.setOnClickListener {
                 modelListener.onClick(model)
             }

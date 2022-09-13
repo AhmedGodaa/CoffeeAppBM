@@ -2,30 +2,41 @@ package com.banquemisr.coffeeapp_banquemisr.presentation.order
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.banquemisr.coffeeapp_banquemisr.common.Constants
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivityOrderBinding
 
 class OrderActivity : AppCompatActivity() {
 
     private var count: Int = 1
-    private var sizeCurrentCoefficient: Double = 1.0
-    private var sizeSmallCoefficient: Double = 1.0
-    private var sizeMediumCoefficient: Double = 2.0
-    private var sizeLargeCoefficient: Double = 3.0
+    private var sizeCurrentCoefficient: Float = 1.0f
+    private var sizeSmallCoefficient: Float = 1.0f
+    private var sizeMediumCoefficient: Float = 2.0f
+    private var sizeLargeCoefficient: Float = 3.0f
     private var isSmall: Boolean = true
     private var isMedium: Boolean = false
     private var isLarge: Boolean = false
-    private var itemPrice: Double = 10.0
-    private var totalPrice: Double = 10.0
+    private var itemPrice: Float = 10.0f
+    private var totalPrice: Float = 10.0f
+
 
     lateinit var binding: ActivityOrderBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityOrderBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //setListeners()
+        itemPrice = intent.getFloatExtra(Constants.KEY_MENU_PRICE, 0.0f)
+        binding.itemName.text = intent.getStringExtra(Constants.KEY_MENU_NAME)
+        binding.itemImage.setImageResource(intent.getIntExtra(Constants.KEY_MENU_ICON, 0))
         binding.amountText.text = count.toString()
         binding.totalPriceText.text = itemPrice.toString()
 
+
+        setListeners()
+
+
+    }
+
+    private fun setListeners() {
         //add one button
         binding.addButton.setOnClickListener {
             addCup()

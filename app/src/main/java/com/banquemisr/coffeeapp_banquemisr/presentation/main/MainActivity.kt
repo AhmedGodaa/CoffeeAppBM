@@ -6,11 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.banquemisr.coffeeapp_banquemisr.R
 import com.banquemisr.coffeeapp_banquemisr.common.Constants
-import com.banquemisr.coffeeapp_banquemisr.common.openActivity
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivityMainBinding
-import com.banquemisr.coffeeapp_banquemisr.domain.model.Menu
+import com.banquemisr.coffeeapp_banquemisr.domain.model.Coffee
 import com.banquemisr.coffeeapp_banquemisr.presentation.menu.MenuAdapter
 import com.banquemisr.coffeeapp_banquemisr.presentation.menu.MenuListener
+import com.banquemisr.coffeeapp_banquemisr.presentation.order.OrderActivity
 
 
 class MainActivity : AppCompatActivity(), MenuListener {
@@ -21,23 +21,24 @@ class MainActivity : AppCompatActivity(), MenuListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val posts: ArrayList<Menu> = ArrayList()
-        posts.add(Menu(name = "Espresso", R.drawable.ic_espresso))
-        posts.add(Menu(name = "Cappuccino", R.drawable.ic_cappuccino))
-        posts.add(Menu(name = "Macciato", R.drawable.ic_macciato))
-        posts.add(Menu(name = "Mocha", R.drawable.ic_mocha))
-        posts.add(Menu(name = "Latte", R.drawable.ic_latte))
-        val adapter = MenuAdapter(posts, this)
+        val coffees: ArrayList<Coffee> = ArrayList()
+        coffees.add(Coffee(name = "Espresso", icon = R.drawable.ic_espresso, unitPrice = 10.0f))
+        coffees.add(Coffee(name = "Cappuccino", icon = R.drawable.ic_cappuccino, unitPrice = 15.0f))
+        coffees.add(Coffee(name = "Macciato", icon = R.drawable.ic_macciato, unitPrice = 25.0f))
+        coffees.add(Coffee(name = "Mocha", icon = R.drawable.ic_mocha, unitPrice = 35.0f))
+        coffees.add(Coffee(name = "Latte", icon = R.drawable.ic_latte, unitPrice = 40.0f))
+        val adapter = MenuAdapter(coffees, this)
         binding.recyclerView.setHasFixedSize(true)
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
 
     }
 
-    override fun onClick(model: Menu) {
-        val intent = Intent();
+    override fun onClick(model: Coffee) {
+        val intent = Intent(this, OrderActivity::class.java);
         intent.putExtra(Constants.KEY_MENU_ICON, model.icon)
         intent.putExtra(Constants.KEY_MENU_NAME, model.name)
+        intent.putExtra(Constants.KEY_MENU_PRICE, model.unitPrice)
         startActivity(intent)
     }
 }
