@@ -16,18 +16,23 @@
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/fragment_welcome_first.xml" value="0.16145833333333334" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/CoffeeApp-BanqueMisr/app/src/main/res/drawable-mdpi/sugar_three.xml" value="0.201" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/CoffeeApp-BanqueMisr/app/src/main/res/drawable-mdpi/sugar_two.xml" value="0.201" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/CoffeeApp-BanqueMisr/app/src/main/res/drawable/ic_cub_not_selected.xml" value="0.201" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/CoffeeApp-BanqueMisr/app/src/main/res/layout/activity_main.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/CoffeeApp-BanqueMisr/app/src/main/res/layout/activity_order.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/CoffeeApp-BanqueMisr/app/src/main/res/layout/activity_sign_in.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/CoffeeApp-BanqueMisr/app/src/main/res/layout/activity_sign_up.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/CoffeeApp-BanqueMisr/app/src/main/res/layout/activity_splash.xml" value="0.23645833333333333" />
-        <entry key="..\:/Users/Dell/AndroidStudioProjects/CoffeeApp-BanqueMisr/app/src/main/res/layout/activity_welcome.xml" value="0.23645833333333333" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/CoffeeApp-BanqueMisr/app/src/main/res/layout/activity_welcome.xml" value="0.1" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/CoffeeApp-BanqueMisr/app/src/main/res/layout/fragment_cart.xml" value="0.23541666666666666" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/CoffeeApp-BanqueMisr/app/src/main/res/layout/fragment_home.xml" value="0.23645833333333333" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/CoffeeApp-BanqueMisr/app/src/main/res/layout/fragment_profile.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/CoffeeApp-BanqueMisr/app/src/main/res/layout/fragment_welcome_first.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/CoffeeApp-BanqueMisr/app/src/main/res/layout/fragment_welcome_second.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/CoffeeApp-BanqueMisr/app/src/main/res/layout/fragment_welcome_third.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/CoffeeApp-BanqueMisr/app/src/main/res/layout/item.xml" value="0.23645833333333333" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/CoffeeApp-BanqueMisr/app/src/main/res/layout/item_container_coffee_order.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/CoffeeApp-BanqueMisr/app/src/main/res/layout/item_container_menu.xml" value="0.23645833333333333" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/CoffeeApp-BanqueMisr/app/src/main/res/menu/home_navigation.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/CoffeeApp-BanqueMisr/app/src/main/res/menu/main_menu.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/CoffeeApp-BanqueMisr/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.201" />
       </map>

@@ -15,6 +15,7 @@ class OrderActivity : AppCompatActivity() {
     private var isSmall: Boolean = true
     private var isMedium: Boolean = false
     private var isLarge: Boolean = false
+    private var selectedSugar=-1
     private var itemPrice: Float = 10.0f
     private var totalPrice: Float = 10.0f
 
@@ -76,8 +77,51 @@ class OrderActivity : AppCompatActivity() {
 
             largeCup()
         }
+      //no Sugar
+        binding.noSugar.setOnClickListener {
+            binding.noSugar.alpha = 1.0f
+            binding.oneSugar.alpha = 0.3f
+            binding.twoSugar.alpha = 0.3f
+            binding.threeSugar.alpha = 0.3f
+
+            selectedSugar=0
+        }
+        //select one sugar
+        binding.oneSugar.setOnClickListener {
+            binding.noSugar.alpha = 0.3f
+            binding.oneSugar.alpha = 1.0f
+            binding.twoSugar.alpha = 0.3f
+            binding.threeSugar.alpha = 0.3f
+
+            selectedSugar=0
+        }
+
+        // Select two sugar
+        binding.twoSugar.setOnClickListener {
+            binding.noSugar.alpha = 0.3f
+            binding.oneSugar.alpha = 0.3f
+            binding.twoSugar.alpha = 1.0f
+            binding.threeSugar.alpha = 0.3f
+
+            selectedSugar=0
+        }
+
+        // Select three sugar
+        binding.threeSugar.setOnClickListener {
+            binding.noSugar.alpha = 0.3f
+            binding.oneSugar.alpha = 0.3f
+            binding.twoSugar.alpha = 0.3f
+            binding.threeSugar.alpha = 1.0f
+            selectedSugar=0
+        }
+
+
+
+
+
 
     }
+
 
     private fun addCup() {
         count++
