@@ -16,5 +16,5 @@ interface ApiService {
     fun signUp(@Body user: User?): Call<SignUpDto?>?
 
     @POST("/order")
-    fun order(@Body userOrder: UserOrder)
+    fun userOrder(@Body userOrder: UserOrder): Call<OrderDto>
 }
