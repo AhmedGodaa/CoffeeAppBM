@@ -2,8 +2,16 @@ package com.banquemisr.coffeeapp_banquemisr.presentation.order
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.banquemisr.coffeeapp_banquemisr.common.Constants
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivityOrderBinding
+import com.banquemisr.coffeeapp_banquemisr.domain.model.CoffeeOrder
+import com.banquemisr.coffeeapp_banquemisr.presentation.cart.CartViewModel
+import com.banquemisr.coffeeapp_banquemisr.presentation.cart.CartViewModelProvider
+import com.banquemisr.data.db.CartDB
+import com.banquemisr.data.db.CartRepo
+import kotlinx.coroutines.launch
 
 class OrderActivity : AppCompatActivity() {
 
@@ -17,22 +25,36 @@ class OrderActivity : AppCompatActivity() {
     private var isLarge: Boolean = false
     private var itemPrice: Float = 10.0f
     private var totalPrice: Float = 10.0f
-
+    private lateinit var viewModel: CartViewModel
+    private var coffeeName: String = ""
 
     lateinit var binding: ActivityOrderBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityOrderBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        itemPrice = intent.getFloatExtra(Constants.KEY_MENU_PRICE, 0.0f)
-        totalPrice = itemPrice //initially the total price is the item's price
-        binding.itemName.text = intent.getStringExtra(Constants.KEY_MENU_NAME)
+//        ViewModel
+        val repo = CartRepo(CartDB.getDatabase(this))
+        val cartViewModelProvider = CartViewModelProvider(repo)
+        viewModel = ViewModelProvider(this, cartViewModelProvider)[CartViewModel::class.java]
+//        end
+
+        getOrderData()
         binding.itemImage.setImageResource(intent.getIntExtra(Constants.KEY_MENU_ICON, 0))
         binding.amountText.text = count.toString()
         binding.totalPriceText.text = itemPrice.toString()
 
 
         setListeners()
+
+
+    }
+
+    private fun getOrderData() {
+        itemPrice = intent.getFloatExtra(Constants.KEY_MENU_PRICE, 0.0f)
+        totalPrice = itemPrice //initially the total price is the item's price
+        coffeeName = intent.getStringExtra(Constants.KEY_MENU_NAME).toString()
+        binding.itemName.text = coffeeName
 
 
     }
@@ -73,10 +95,32 @@ class OrderActivity : AppCompatActivity() {
             binding.imgLargeSize.alpha = 1.0f
             binding.imgSmallSize.alpha = 0.3f
             binding.imgMediumSize.alpha = 0.3f
-
-
             largeCup()
         }
+
+        binding.addToCartButton.setOnClickListener {
+            var size = ""
+            if (isLarge) {
+                size = "large"
+
+            } else if (isMedium) {
+                size = "medium"
+            } else if (isSmall) {
+                size = "small"
+            }
+            val coffeeOrder = CoffeeOrder(
+                name = coffeeName,
+                count = count,
+                size = size,
+                sugar = "zero",
+                totalPrice = totalPrice
+            )
+            lifecycleScope.launch {
+                viewModel.insertOrder(coffeeOrder)
+
+            }
+        }
+
 
     }
 
@@ -141,66 +185,5 @@ class OrderActivity : AppCompatActivity() {
     }
 
 
-//    private fun setListeners() {
-//        addRemoveButton()
-//
-//    }
-//
-//    private fun addRemoveButton() {
-//
-//        binding.addButton.setOnClickListener {
-//            count++
-//            totalPrice = itemPrice * count
-//            binding.amountText.text = count.toString()
-//            binding.totalPriceText.text = totalPrice.toString()
-//        }
-//
-//        binding.removeButton.setOnClickListener {
-//            if (count > 0) {
-//                count--
-//                totalPrice = itemPrice * count
-//                binding.amountText.text = count.toString()
-//                binding.totalPriceText.text = totalPrice.toString()
-//
-//            }
-//        }
-//        binding.imgSmallSize.setOnClickListener {
-////            binding.imgSmallSize
-//            isSmall = true
-//            if (isMedium) {
-//                totalPrice /= 2
-//                isMedium = false
-//            } else if (isLarge) {
-//                totalPrice /= 3
-//                isLarge = false
-//            }
-//            binding.totalPriceText.text = totalPrice.toString()
-//
-//        }
-//        binding.imgMediumSize.setOnClickListener {
-//            isMedium = true
-//            if (isSmall) {
-//                totalPrice *= 2
-//                isSmall = false
-//            } else if (isLarge) {
-//                totalPrice -= itemPrice
-//                isLarge = false
-//            }
-//            binding.totalPriceText.text = totalPrice.toString()
-//
-//
-//        }
-//        binding.imgLargeSize.setOnClickListener {
-//            isLarge = true
-//            if (isSmall) {
-//                totalPrice *= 3
-//                isSmall = false
-//            } else if (isMedium) {
-//                totalPrice += itemPrice
-//                isMedium = false
-//            }
-//            binding.totalPriceText.text = totalPrice.toString()
-//        }
-//
-//    }
+
 }
