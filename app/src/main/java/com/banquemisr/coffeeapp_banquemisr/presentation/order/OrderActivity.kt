@@ -25,6 +25,7 @@ class OrderActivity : AppCompatActivity() {
         binding = ActivityOrderBinding.inflate(layoutInflater)
         setContentView(binding.root)
         itemPrice = intent.getFloatExtra(Constants.KEY_MENU_PRICE, 0.0f)
+        totalPrice = itemPrice //initially the total price is the item's price
         binding.itemName.text = intent.getStringExtra(Constants.KEY_MENU_NAME)
         binding.itemImage.setImageResource(intent.getIntExtra(Constants.KEY_MENU_ICON, 0))
         binding.amountText.text = count.toString()
