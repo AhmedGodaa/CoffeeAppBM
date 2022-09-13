@@ -10,6 +10,9 @@ import com.banquemisr.coffeeapp_banquemisr.common.PreferencesManager
 import com.banquemisr.coffeeapp_banquemisr.common.showToast
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivitySignInBinding
 import com.banquemisr.coffeeapp_banquemisr.domain.model.User
+import com.banquemisr.coffeeapp_banquemisr.domain.model.UserLogIn
+import com.banquemisr.coffeeapp_banquemisr.domain.repositories.SignInRepository
+import com.banquemisr.coffeeapp_banquemisr.domain.repositories.SignUpRepository
 import com.banquemisr.coffeeapp_banquemisr.presentation.main.MainActivity
 
 class SignInActivity : AppCompatActivity() {
@@ -32,9 +35,9 @@ class SignInActivity : AppCompatActivity() {
 
         binding.btnSignIn.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-//            if (isValidSignInDetails()) {
-//                signIn()
-//            }
+            if (isValidSignInDetails()) {
+                signIn()
+            }
             startActivity(intent)
             finish()
         }
@@ -60,8 +63,9 @@ class SignInActivity : AppCompatActivity() {
 
     private fun signIn() {
         val password = binding.inputPassword.text.toString()
-        val username = binding.inputEmail.text.toString()
-        val user = User(username = username, password = password)
+        val email = binding.inputEmail.text.toString()
+        val user = UserLogIn(email = email, password = password)
+
         signInViewModel.getLoginResponseLiveData(user).observe(this) { signInResponse ->
             preferencesManager.putString(Constants.KEY_USERNAME, signInResponse.username)
             val intent = Intent(this, MainActivity::class.java)
