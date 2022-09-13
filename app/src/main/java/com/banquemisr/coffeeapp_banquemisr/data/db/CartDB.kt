@@ -1,18 +1,16 @@
-package com.banquemisr.data.db
+package com.banquemisr.coffeeapp_banquemisr.data.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
-import com.banquemisr.coffeeapp_banquemisr.common.Converters
 import com.banquemisr.coffeeapp_banquemisr.domain.model.CoffeeOrder
 
 @Database(
     entities = [CoffeeOrder::class],
     version = 1
 )
-@TypeConverters(Converters::class)
+//@TypeConverters(Converters::class)
 abstract class CartDB : RoomDatabase() {
     abstract fun getCartDao(): CartDao
 

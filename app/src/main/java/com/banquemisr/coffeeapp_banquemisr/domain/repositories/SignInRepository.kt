@@ -4,9 +4,9 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.banquemisr.coffeeapp_banquemisr.domain.model.User
-import com.banquemisr.data.remote.ApiClient
-import com.banquemisr.data.remote.ApiService
-import com.banquemisr.data.remote.dto.SignInDto
+import com.banquemisr.coffeeapp_banquemisr.data.remote.ApiClient
+import com.banquemisr.coffeeapp_banquemisr.data.remote.ApiService
+import com.banquemisr.coffeeapp_banquemisr.data.remote.dto.SignInDto
 
 import retrofit2.Call
 import retrofit2.Callback

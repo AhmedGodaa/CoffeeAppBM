@@ -9,8 +9,8 @@ import com.banquemisr.coffeeapp_banquemisr.databinding.ActivityOrderBinding
 import com.banquemisr.coffeeapp_banquemisr.domain.model.CoffeeOrder
 import com.banquemisr.coffeeapp_banquemisr.presentation.cart.CartViewModel
 import com.banquemisr.coffeeapp_banquemisr.presentation.cart.CartViewModelProvider
-import com.banquemisr.data.db.CartDB
-import com.banquemisr.data.db.CartRepo
+import com.banquemisr.coffeeapp_banquemisr.data.db.CartDB
+import com.banquemisr.coffeeapp_banquemisr.data.db.CartRepo
 import kotlinx.coroutines.launch
 
 class OrderActivity : AppCompatActivity() {

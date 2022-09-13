@@ -1,4 +1,4 @@
-package com.banquemisr.data.remote.dto
+package com.banquemisr.coffeeapp_banquemisr.data.remote.dto
 
 import com.google.gson.annotations.SerializedName
 

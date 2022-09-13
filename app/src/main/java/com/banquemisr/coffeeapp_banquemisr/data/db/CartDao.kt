@@ -1,4 +1,4 @@
-package com.banquemisr.data.db
+package com.banquemisr.coffeeapp_banquemisr.data.db
 
 import androidx.room.Dao
 import androidx.room.Insert

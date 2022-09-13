@@ -1,7 +1,6 @@
-package com.banquemisr.data.remote
+package com.banquemisr.coffeeapp_banquemisr.data.remote
 
 import retrofit2.Retrofit
-import com.banquemisr.data.remote.ApiClient
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiClient {

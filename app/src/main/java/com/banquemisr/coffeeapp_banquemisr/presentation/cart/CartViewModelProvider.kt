@@ -2,7 +2,7 @@ package com.banquemisr.coffeeapp_banquemisr.presentation.cart
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.banquemisr.data.db.CartRepo
+import com.banquemisr.coffeeapp_banquemisr.data.db.CartRepo
 
 class CartViewModelProvider(
     private val cartRepo: CartRepo

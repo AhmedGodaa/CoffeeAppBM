@@ -1,10 +1,10 @@
-package com.banquemisr.data.remote
+package com.banquemisr.coffeeapp_banquemisr.data.remote
 
 import com.banquemisr.coffeeapp_banquemisr.domain.model.User
 import com.banquemisr.coffeeapp_banquemisr.domain.model.UserOrder
 import retrofit2.http.POST
-import com.banquemisr.data.remote.dto.SignInDto
-import com.banquemisr.data.remote.dto.SignUpDto
+import com.banquemisr.coffeeapp_banquemisr.data.remote.dto.SignInDto
+import com.banquemisr.coffeeapp_banquemisr.data.remote.dto.SignUpDto
 import retrofit2.Call
 import retrofit2.http.Body
 

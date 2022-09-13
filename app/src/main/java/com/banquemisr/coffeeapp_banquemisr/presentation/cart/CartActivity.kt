@@ -4,11 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.banquemisr.coffeeapp_banquemisr.R
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivityCartBinding
-import com.banquemisr.coffeeapp_banquemisr.presentation.menu.MenuAdapter
-import com.banquemisr.data.db.CartDB
-import com.banquemisr.data.db.CartRepo
+import com.banquemisr.coffeeapp_banquemisr.data.db.CartDB
+import com.banquemisr.coffeeapp_banquemisr.data.db.CartRepo
 
 class CartActivity : AppCompatActivity() {
     lateinit var binding: ActivityCartBinding
