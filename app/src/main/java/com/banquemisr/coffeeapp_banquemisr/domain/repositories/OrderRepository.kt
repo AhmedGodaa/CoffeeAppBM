@@ -14,9 +14,9 @@ import retrofit2.Response
 class OrderRepository {
     private val apiService: ApiService = ApiClient.retrofit!!.create(ApiService::class.java)
 
-    fun order(userOrder: UserOrder): LiveData<OrderDto?> {
+    fun orderWithCart(userOrder: UserOrder): LiveData<OrderDto> {
 
-        val mutableLiveData = MutableLiveData<OrderDto?>()
+        val mutableLiveData = MutableLiveData<OrderDto>()
 
         apiService.userOrder(userOrder).enqueue(object : Callback<OrderDto?> {
             override fun onResponse(call: Call<OrderDto?>, response: Response<OrderDto?>) {
