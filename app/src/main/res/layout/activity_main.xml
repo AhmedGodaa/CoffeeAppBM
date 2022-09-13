@@ -30,28 +30,28 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/imageBack"
-            android:layout_alignEnd="@+id/imageSearch"
+            android:textSize="@dimen/_16ssp"
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
             android:layout_gravity="center_vertical"
+            android:layout_centerInParent="true"
             android:gravity="center"
             android:text="@string/menu"
             android:textColor="@color/primaryDark" />
 
-        <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/imageSearch"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="5dp"
-            android:contentDescription="@string/app_name" />
+<!--        <com.makeramen.roundedimageview.RoundedImageView-->
+<!--            android:id="@+id/imageSearch"-->
+<!--            android:layout_width="30dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_gravity="center_vertical"-->
+<!--            android:layout_marginStart="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            android:layout_marginBottom="5dp"-->
+<!--            android:contentDescription="@string/app_name" />-->
     </RelativeLayout>
 
     <androidx.fragment.app.FragmentContainerView
