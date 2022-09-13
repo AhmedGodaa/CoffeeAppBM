@@ -118,7 +118,6 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="90dp"
-
             android:background="#8C746A"
             app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
@@ -138,7 +137,6 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="70dp"
-
             android:background="#8C746A"
             app:layout_constraintTop_toBottomOf="@+id/view8" />
 
@@ -147,42 +145,38 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="71dp"
-
             android:background="#8C746A"
             app:layout_constraintTop_toBottomOf="@+id/view9" />
 
         <ImageView
-
             android:id="@+id/imgSmallSize"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_28sdp"
+            android:layout_height="@dimen/_28sdp"
             android:layout_marginEnd="33dp"
             android:layout_marginBottom="16dp"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_mini_cub"
+            android:src="@drawable/ic_cub_not_selected"
             app:layout_constraintBottom_toTopOf="@+id/view10"
-            app:layout_constraintEnd_toStartOf="@+id/imgMediumSize"
-            android:tintMode="src_in"
-            app:tint="@color/black"  />
+            app:layout_constraintEnd_toStartOf="@+id/imgMediumSize" />
+
 
         <ImageView
             android:id="@+id/imgMediumSize"
-            android:layout_width="24dp"
-
-            android:layout_height="36dp"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
             android:layout_marginEnd="30dp"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/size_medium"
+            android:src="@drawable/ic_cub_not_selected"
             app:layout_constraintBottom_toBottomOf="@+id/imgSmallSize"
             app:layout_constraintEnd_toStartOf="@+id/imgLargeSize" />
 
         <ImageView
             android:id="@+id/imgLargeSize"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
             android:layout_marginEnd="85dp"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/size_medium"
+            android:src="@drawable/ic_cub_not_selected"
             app:layout_constraintBottom_toBottomOf="@+id/imgMediumSize"
             app:layout_constraintEnd_toEndOf="parent" />
 

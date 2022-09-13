@@ -6,16 +6,16 @@ import com.banquemisr.coffeeapp_banquemisr.databinding.ActivityOrderBinding
 
 class OrderActivity : AppCompatActivity() {
 
-    private var count:                      Int = 1
-    private var sizeCurrentCoefficient:     Double = 1.0
-    private var sizeSmallCoefficient:       Double = 1.0
-    private var sizeMediumCoefficient:      Double = 2.0
-    private var sizeLargeCoefficient:       Double = 3.0
-    private var isSmall:                    Boolean = true
-    private var isMedium:                   Boolean = false
-    private var isLarge:                    Boolean = false
-    private var itemPrice:                  Double = 10.0
-    private var totalPrice:                 Double = 10.0
+    private var count: Int = 1
+    private var sizeCurrentCoefficient: Double = 1.0
+    private var sizeSmallCoefficient: Double = 1.0
+    private var sizeMediumCoefficient: Double = 2.0
+    private var sizeLargeCoefficient: Double = 3.0
+    private var isSmall: Boolean = true
+    private var isMedium: Boolean = false
+    private var isLarge: Boolean = false
+    private var itemPrice: Double = 10.0
+    private var totalPrice: Double = 10.0
 
     lateinit var binding: ActivityOrderBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,36 +33,49 @@ class OrderActivity : AppCompatActivity() {
 
         //remove one button
         binding.removeButton.setOnClickListener {
+
             removeCup()
         }
 
         //small cup
         binding.imgSmallSize.setOnClickListener {
+            binding.imgSmallSize.alpha = 1.0f
+            binding.imgMediumSize.alpha = 0.3f
+            binding.imgLargeSize.alpha = 0.3f
+
             smallCup()
         }
 
         //medium cup
         binding.imgMediumSize.setOnClickListener {
-           mediumCup()
+            binding.imgMediumSize.alpha = 1.0f
+            binding.imgSmallSize.alpha = 0.3f
+            binding.imgLargeSize.alpha = 0.3f
+
+
+            mediumCup()
         }
 
         //large cup
         binding.imgLargeSize.setOnClickListener {
+            binding.imgLargeSize.alpha = 1.0f
+            binding.imgSmallSize.alpha = 0.3f
+            binding.imgMediumSize.alpha = 0.3f
+
+
             largeCup()
         }
 
     }
 
-    private fun addCup()
-    {
+    private fun addCup() {
         count++
         totalPrice += itemPrice * sizeCurrentCoefficient
         binding.amountText.text = count.toString()
         binding.totalPriceText.text = totalPrice.toString()
     }
 
-    private fun removeCup()
-    {
+    private fun removeCup() {
         if (count > 1) {
             count--
             totalPrice -= itemPrice * sizeCurrentCoefficient
@@ -72,8 +85,7 @@ class OrderActivity : AppCompatActivity() {
         }
     }
 
-    private fun smallCup()
-    {
+    private fun smallCup() {
         //            binding.imgSmallSize
         isSmall = true
         sizeCurrentCoefficient = sizeSmallCoefficient
@@ -88,8 +100,7 @@ class OrderActivity : AppCompatActivity() {
         binding.totalPriceText.text = totalPrice.toString()
     }
 
-    private fun mediumCup()
-    {
+    private fun mediumCup() {
         isMedium = true
         sizeCurrentCoefficient = sizeMediumCoefficient
 
@@ -97,14 +108,13 @@ class OrderActivity : AppCompatActivity() {
             totalPrice *= sizeMediumCoefficient
             isSmall = false
         } else if (isLarge) {
-            totalPrice *= sizeMediumCoefficient/sizeLargeCoefficient
+            totalPrice *= sizeMediumCoefficient / sizeLargeCoefficient
             isLarge = false
         }
         binding.totalPriceText.text = totalPrice.toString()
     }
 
-    private fun largeCup()
-    {
+    private fun largeCup() {
         isLarge = true
         sizeCurrentCoefficient = sizeLargeCoefficient
 
@@ -112,12 +122,11 @@ class OrderActivity : AppCompatActivity() {
             totalPrice *= sizeLargeCoefficient
             isSmall = false
         } else if (isMedium) {
-            totalPrice *= sizeLargeCoefficient/sizeMediumCoefficient
+            totalPrice *= sizeLargeCoefficient / sizeMediumCoefficient
             isMedium = false
         }
         binding.totalPriceText.text = totalPrice.toString()
     }
-
 
 
 //    private fun setListeners() {
