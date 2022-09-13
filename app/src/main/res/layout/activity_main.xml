@@ -6,59 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".presentation.main.MainActivity">
 
-    <RelativeLayout
-        android:id="@+id/toolBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-<!--        <ImageView-->
-<!--            android:id="@+id/imageBack"-->
-<!--            android:layout_width="30dp"-->
-<!--            android:layout_height="30dp"-->
-<!--            android:layout_alignParentStart="true"-->
-<!--            android:layout_alignParentTop="true"-->
-<!--            android:layout_alignParentBottom="true"-->
-<!--            android:layout_gravity="center_vertical"-->
-<!--            android:layout_marginStart="20dp"-->
-<!--            android:contentDescription="@string/app_name"-->
-<!--            android:src="@drawable/ic_back"-->
-<!--            app:tint="@color/primaryDark" />-->
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/_16ssp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="center_vertical"
-            android:layout_centerInParent="true"
-            android:gravity="center"
-            android:text="@string/menu"
-            android:textColor="@color/primaryDark" />
-
-<!--        <com.makeramen.roundedimageview.RoundedImageView-->
-<!--            android:id="@+id/imageSearch"-->
-<!--            android:layout_width="30dp"-->
-<!--            android:layout_height="30dp"-->
-<!--            android:layout_alignParentTop="true"-->
-<!--            android:layout_alignParentEnd="true"-->
-<!--            android:layout_alignParentBottom="true"-->
-<!--            android:layout_gravity="center_vertical"-->
-<!--            android:layout_marginStart="5dp"-->
-<!--            android:layout_marginTop="5dp"-->
-<!--            android:layout_marginEnd="20dp"-->
-<!--            android:layout_marginBottom="5dp"-->
-<!--            android:contentDescription="@string/app_name" />-->
-    </RelativeLayout>
-
     <androidx.fragment.app.FragmentContainerView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintTop_toBottomOf="@+id/toolBarLayout" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -68,7 +20,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/home_navigation"/>
+        app:menu="@menu/home_navigation" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

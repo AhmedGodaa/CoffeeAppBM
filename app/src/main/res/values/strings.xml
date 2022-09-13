@@ -49,4 +49,7 @@
     <string name="plus">+</string>
     <string name="zero">0</string>
     <string name="enter_username">Enter Username</string>
+    <string name="cart">cart</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
 </resources>
