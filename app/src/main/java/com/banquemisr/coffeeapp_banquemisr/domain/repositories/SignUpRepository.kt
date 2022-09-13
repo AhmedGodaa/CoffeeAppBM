@@ -12,7 +12,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class SignUpRepository {
-    private val apiService: ApiService = ApiClient.retrofit.create(ApiService::class.java)
+    private val apiService: ApiService = ApiClient.retrofit!!.create(ApiService::class.java)
     fun signUp(user: User?): LiveData<SignUpDto?> {
         val mutableLiveData = MutableLiveData<SignUpDto?>()
         apiService.signUp(user)!!.enqueue(object : Callback<SignUpDto?> {
