@@ -74,7 +74,6 @@ class OrderActivity : AppCompatActivity() {
             binding.imgSmallSize.alpha = 0.3f
             binding.imgMediumSize.alpha = 0.3f
 
-
             largeCup()
         }
 
