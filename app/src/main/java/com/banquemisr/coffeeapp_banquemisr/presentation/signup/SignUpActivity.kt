@@ -31,8 +31,12 @@ class SignUpActivity : AppCompatActivity() {
         }
         binding.btnSignUp.setOnClickListener {
             if (isValidSignUpDetails()) {
+                showToast("Sign up successful")
                 signUp()
+                openActivity(SignInActivity::class.java)
+                finish()
             }
+
         }
     }
 
