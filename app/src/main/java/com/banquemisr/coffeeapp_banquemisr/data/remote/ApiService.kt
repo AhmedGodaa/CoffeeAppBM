@@ -20,8 +20,8 @@ interface ApiService {
     @POST("/order")
     fun order(@Body userOrder: UserOrder)
 
-    @GET("/product")
-    fun getProducts()
+//    @GET("/product")
+//    fun getProducts()
     @POST("/")
     fun userOrder(@Body userOrder: UserOrder): Call<OrderDto>
 }

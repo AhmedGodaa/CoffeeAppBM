@@ -6,3 +6,4 @@ data class UserOrder(
     val totalPrice: Double,
     val coffeesList: List<CoffeeOrder>
 )
+

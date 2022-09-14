@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,13 +26,15 @@ class CartFragment : Fragment() {
         val repo = CartRepo(CartDB.getDatabase(requireContext()))
         val cartViewModelProvider = CartViewModelProvider(repo)
         viewModel = ViewModelProvider(this, cartViewModelProvider)[CartViewModel::class.java]
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         viewModel.getAllOrders()
         val adapter = CartAdapter(viewModel.list)
         binding.recyclerView.setHasFixedSize(true)
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        return binding.root
     }
-
-
 }

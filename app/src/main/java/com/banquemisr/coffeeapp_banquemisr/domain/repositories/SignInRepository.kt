@@ -22,9 +22,7 @@ class SignInRepository {
         apiService.signIn(user)?.enqueue(object : Callback<SignInDto?> {
             override fun onResponse(call: Call<SignInDto?>, response: Response<SignInDto?>) {
                 Log.d(TAG, "onResponse: Succeeded")
-
-                if(response.code() == 200)
-                {
+                if (response.code() == 200) {
                     loginFlag = true
                 }
 

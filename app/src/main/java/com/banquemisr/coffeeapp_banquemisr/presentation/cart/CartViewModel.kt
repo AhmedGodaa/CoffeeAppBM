@@ -14,13 +14,9 @@ class CartViewModel(
     private val _list = mutableListOf<CoffeeOrder>()
     val list: List<CoffeeOrder> = _list
 
-    init {
-        getAllOrders()
-
-    }
 
 
-    fun getAllOrders() {
+     fun getAllOrders() {
         viewModelScope.launch(Dispatchers.Default) {
             cartRepo.getAllOrders().forEach {
                 _list.add(it)

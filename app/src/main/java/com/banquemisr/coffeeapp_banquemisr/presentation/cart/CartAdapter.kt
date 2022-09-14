@@ -37,6 +37,7 @@ class CartAdapter(private val data: List<CoffeeOrder>) :
             binding.tvCount.text = "Count: " + model?.count
             binding.tvTotalPrice.text = "Total: : " + model?.totalPrice
             binding.tvSize.text = "Size: " + model?.size
+            binding.imgItem.setImageResource(model!!.icon)
 
         }
     }

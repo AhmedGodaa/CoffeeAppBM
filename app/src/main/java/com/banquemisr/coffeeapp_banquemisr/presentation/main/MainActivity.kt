@@ -8,6 +8,7 @@ import androidx.core.view.GravityCompat
 import com.banquemisr.coffeeapp_banquemisr.R
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivityMainBinding
 import com.banquemisr.coffeeapp_banquemisr.domain.model.Coffee
+import com.banquemisr.coffeeapp_banquemisr.presentation.cart.CartFragment
 import com.banquemisr.coffeeapp_banquemisr.presentation.menu.MenuListener
 import com.banquemisr.coffeeapp_banquemisr.presentation.profile.FragmentProfile
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -58,10 +59,10 @@ class MainActivity : AppCompatActivity(), MenuListener,
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
 
         if (item.itemId == R.id.menu_cart) {
-            val fragmentProfile = FragmentProfile()
+            val cartFragment = CartFragment()
             val fm = supportFragmentManager
             val ft = fm.beginTransaction()
-            ft.replace(R.id.fragmentContainer, fragmentProfile)
+            ft.replace(R.id.fragmentContainer, cartFragment)
             ft.commit()
             binding.drawerLayout.closeDrawer(GravityCompat.START)
         }
