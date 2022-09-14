@@ -3,6 +3,7 @@ package com.banquemisr.coffeeapp_banquemisr.domain.repositories
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.banquemisr.coffeeapp_banquemisr.common.Constants.loginFlag
 import com.banquemisr.coffeeapp_banquemisr.domain.model.User
 import com.banquemisr.coffeeapp_banquemisr.domain.model.UserLogIn
 import com.banquemisr.data.remote.ApiClient
@@ -20,11 +21,17 @@ class SignInRepository {
         apiService.signIn(user)?.enqueue(object : Callback<SignInDto?> {
             override fun onResponse(call: Call<SignInDto?>, response: Response<SignInDto?>) {
                 Log.d(TAG, "onResponse: Succeeded")
+
+                if(response.code() == 200)
+                {
+                    loginFlag = true
+                }
+
                 mutableLiveData.value = response.body()
             }
 
             override fun onFailure(call: Call<SignInDto?>, t: Throwable) {
-                Log.d(TAG, t.message!!)
+                loginFlag = false
             }
         })
         return mutableLiveData

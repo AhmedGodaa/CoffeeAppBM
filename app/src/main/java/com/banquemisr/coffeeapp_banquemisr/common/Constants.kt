@@ -13,5 +13,5 @@ object Constants {
     const val KEY_MENU_ICON = "menuIcon"
     const val KEY_MENU_NAME = "menuName"
     const val KEY_MENU_PRICE = "menuPrice"
-
+    var loginFlag = false
 }
