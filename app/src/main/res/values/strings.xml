@@ -49,4 +49,9 @@
     <string name="plus">+</string>
     <string name="zero">0</string>
     <string name="enter_username">Enter Username</string>
+    <string name="cart">Cart</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="navigation_drawer_open">Open Navigation drawer</string>
+    <string name="navigation_drawer_close">Close Navigation drawer</string>
 </resources>

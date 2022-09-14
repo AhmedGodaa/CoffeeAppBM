@@ -20,7 +20,7 @@ class CartViewModel(
     }
 
 
-    private fun getAllOrders() {
+    fun getAllOrders() {
         viewModelScope.launch(Dispatchers.Default) {
             cartRepo.getAllOrders().forEach {
                 _list.add(it)

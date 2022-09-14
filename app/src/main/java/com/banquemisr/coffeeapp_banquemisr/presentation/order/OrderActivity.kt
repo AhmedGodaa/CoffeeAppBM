@@ -23,6 +23,7 @@ class OrderActivity : AppCompatActivity() {
     private var isSmall: Boolean = true
     private var isMedium: Boolean = false
     private var isLarge: Boolean = false
+    private var selectedSugar=-1
     private var itemPrice: Float = 10.0f
     private var totalPrice: Float = 10.0f
     private lateinit var viewModel: CartViewModel
@@ -95,7 +96,37 @@ class OrderActivity : AppCompatActivity() {
             binding.imgLargeSize.alpha = 1.0f
             binding.imgSmallSize.alpha = 0.3f
             binding.imgMediumSize.alpha = 0.3f
+
+
             largeCup()
+        }
+      //no Sugar
+        binding.noSugar.setOnClickListener {
+            binding.noSugar.alpha = 1.0f
+            binding.oneSugar.alpha = 0.3f
+            binding.twoSugar.alpha = 0.3f
+            binding.threeSugar.alpha = 0.3f
+
+            selectedSugar=0
+        }
+        //select one sugar
+        binding.oneSugar.setOnClickListener {
+            binding.noSugar.alpha = 0.3f
+            binding.oneSugar.alpha = 1.0f
+            binding.twoSugar.alpha = 0.3f
+            binding.threeSugar.alpha = 0.3f
+
+            selectedSugar=0
+        }
+
+        // Select two sugar
+        binding.twoSugar.setOnClickListener {
+            binding.noSugar.alpha = 0.3f
+            binding.oneSugar.alpha = 0.3f
+            binding.twoSugar.alpha = 1.0f
+            binding.threeSugar.alpha = 0.3f
+
+            selectedSugar=0
         }
 
         binding.addToCartButton.setOnClickListener {
@@ -122,7 +153,22 @@ class OrderActivity : AppCompatActivity() {
         }
 
 
+        // Select three sugar
+        binding.threeSugar.setOnClickListener {
+            binding.noSugar.alpha = 0.3f
+            binding.oneSugar.alpha = 0.3f
+            binding.twoSugar.alpha = 0.3f
+            binding.threeSugar.alpha = 1.0f
+            selectedSugar=0
+        }
+
+
+
+
+
+
     }
+
 
     private fun addCup() {
         count++
@@ -185,5 +231,66 @@ class OrderActivity : AppCompatActivity() {
     }
 
 
-
+//    private fun setListeners() {
+//        addRemoveButton()
+//
+//    }
+//
+//    private fun addRemoveButton() {
+//
+//        binding.addButton.setOnClickListener {
+//            count++
+//            totalPrice = itemPrice * count
+//            binding.amountText.text = count.toString()
+//            binding.totalPriceText.text = totalPrice.toString()
+//        }
+//
+//        binding.removeButton.setOnClickListener {
+//            if (count > 0) {
+//                count--
+//                totalPrice = itemPrice * count
+//                binding.amountText.text = count.toString()
+//                binding.totalPriceText.text = totalPrice.toString()
+//
+//            }
+//        }
+//        binding.imgSmallSize.setOnClickListener {
+////            binding.imgSmallSize
+//            isSmall = true
+//            if (isMedium) {
+//                totalPrice /= 2
+//                isMedium = false
+//            } else if (isLarge) {
+//                totalPrice /= 3
+//                isLarge = false
+//            }
+//            binding.totalPriceText.text = totalPrice.toString()
+//
+//        }
+//        binding.imgMediumSize.setOnClickListener {
+//            isMedium = true
+//            if (isSmall) {
+//                totalPrice *= 2
+//                isSmall = false
+//            } else if (isLarge) {
+//                totalPrice -= itemPrice
+//                isLarge = false
+//            }
+//            binding.totalPriceText.text = totalPrice.toString()
+//
+//
+//        }
+//        binding.imgLargeSize.setOnClickListener {
+//            isLarge = true
+//            if (isSmall) {
+//                totalPrice *= 3
+//                isSmall = false
+//            } else if (isMedium) {
+//                totalPrice += itemPrice
+//                isMedium = false
+//            }
+//            binding.totalPriceText.text = totalPrice.toString()
+//        }
+//
+//    }
 }
