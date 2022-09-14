@@ -94,7 +94,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/addToCartButton"
+            android:id="@+id/signoutbtn"
             style="@style/button_style"
             android:layout_margin="@dimen/_20sdp"
             android:text="@string/add_to_cart"
@@ -192,7 +192,7 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
-            android:id="@+id/sizeText"
+            android:id="@+id/usernametxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_20sdp"
@@ -309,7 +309,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginBottom="50dp"
             android:text="@string/total"
-            app:layout_constraintBottom_toTopOf="@+id/addToCartButton"
+            app:layout_constraintBottom_toTopOf="@+id/signoutbtn"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view11" />
 
@@ -350,11 +350,11 @@
             android:text="@string/plus"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/view8"
-            app:layout_constraintEnd_toStartOf="@+id/amountText"
+            app:layout_constraintEnd_toStartOf="@+id/username"
             app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
         <TextView
-            android:id="@+id/amountText"
+            android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
