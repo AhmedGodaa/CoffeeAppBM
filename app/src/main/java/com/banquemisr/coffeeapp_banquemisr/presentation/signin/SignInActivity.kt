@@ -36,6 +36,7 @@ class SignInActivity : AppCompatActivity() {
         binding.btnSignIn.setOnClickListener {
             if (isValidSignInDetails()) {
                 signIn()
+                finish()
             }
         }
 
