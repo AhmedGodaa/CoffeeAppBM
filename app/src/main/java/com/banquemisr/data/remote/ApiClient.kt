@@ -1,46 +1,39 @@
-package com.banquemisr.data.remote;
+package com.banquemisr.data.remote
 
-import com.banquemisr.coffeeapp_banquemisr.common.Constants;
-import com.banquemisr.coffeeapp_banquemisr.domain.repositories.OAuthInterceptor;
+import com.banquemisr.coffeeapp_banquemisr.common.Constants
+import retrofit2.Retrofit
+import com.banquemisr.data.remote.ApiClient
+import retrofit2.converter.gson.GsonConverterFactory
+import okhttp3.OkHttpClient
+import com.banquemisr.coffeeapp_banquemisr.domain.repositories.OAuthInterceptor
 
-import okhttp3.OkHttpClient;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
-public class ApiClient {
-    private static Retrofit retrofit;
-    private static final String BASE_URL = "https://cafe-app-project.herokuapp.com/api/";
-
-
-
-    public static Retrofit getRetrofit() {
-        if (retrofit == null) {
-            retrofit = new Retrofit.Builder()
+object ApiClient {
+    var retrofit: Retrofit? = null
+        get() {
+            if (field == null) {
+                field = Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-
-
+                    .build()
+            }
+            return field
         }
-        return retrofit;
-
-    }
-
-    public static Retrofit getRetrofitWithClient() {
-
-        OkHttpClient client =  new OkHttpClient.Builder()
-                .addInterceptor(new OAuthInterceptor("Bearer", Constants.TOKEN))
-                .build();
-
-        Retrofit retrofitWithClient = new Retrofit.Builder()
-                    .baseUrl(BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .client(client)
-                    .build();
-
-
-        return retrofitWithClient;
-
-    }
-
+        private set
+    private const val BASE_URL = "https://cafe-app-project.herokuapp.com/api/"
+    val retrofitWithClient: Retrofit
+        get() {
+            val client = OkHttpClient.Builder()
+                .addInterceptor(
+                    OAuthInterceptor(
+                        "Bearer",
+                        Constants.TOKEN
+                    )
+                )
+                .build()
+            return Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(client)
+                .build()
+        }
 }

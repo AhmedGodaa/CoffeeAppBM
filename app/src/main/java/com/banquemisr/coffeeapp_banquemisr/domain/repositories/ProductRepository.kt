@@ -14,7 +14,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class ProductRepository {
-    private val apiService: ApiService = ApiClient.getRetrofitWithClient().create(ApiService::class.java)
+    private val apiService: ApiService = ApiClient.retrofitWithClient.create(ApiService::class.java)
     fun getOnlineProducts() {
 
 
