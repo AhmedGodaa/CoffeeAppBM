@@ -34,12 +34,9 @@ class SignInActivity : AppCompatActivity() {
     private fun setListeners() {
 
         binding.btnSignIn.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
             if (isValidSignInDetails()) {
                 signIn()
             }
-            startActivity(intent)
-            finish()
         }
 
     }
@@ -67,11 +64,15 @@ class SignInActivity : AppCompatActivity() {
         val user = UserLogIn(email = email, password = password)
 
         signInViewModel.getLoginResponseLiveData(user).observe(this) { signInResponse ->
-            preferencesManager.putString(Constants.KEY_USERNAME, signInResponse.username)
+//            preferencesManager.putString(Constants.KEY_USERNAME, signInResponse.username)
             val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
+            if(Constants.loginFlag)
+            {
+                startActivity(intent)
+                finish()
+            }
         }
+
     }
 
 
