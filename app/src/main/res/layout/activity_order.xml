@@ -1,372 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/orderBackground">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/details_frame_Layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_horizontal_0.4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:weightSum="1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_horizontal_0.02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02" />
 
-            <ImageView
-                android:id="@+id/arrow_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="25dp"
-                android:contentDescription="@string/app_name"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_vertical_0.05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
 
-                android:src="@drawable/ic_baseline_arrow_back_24" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_vertical_0.95"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
 
-            <TextView
-                android:id="@+id/toolbar_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginEnd="25dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/preferences"
-                android:textAlignment="center"
-                android:textSize="@dimen/_15sdp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_vertical_0.3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3" />
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+    <ImageView
+        android:id="@+id/itemImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="5dp"
+        app:layout_constraintBottom_toTopOf="@id/gl_horizontal_0.4"
+        app:layout_constraintEnd_toEndOf="@id/gl_vertical_0.95"
+        app:layout_constraintStart_toStartOf="@id/gl_vertical_0.05"
+        app:layout_constraintTop_toBottomOf="@id/gl_horizontal_0.02"
+        app:srcCompat="@drawable/header" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/relativeLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+    <TextView
+        android:id="@+id/itemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="coffee Name"
+        android:textSize="26sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@id/gl_vertical_0.05"
+        app:layout_constraintTop_toBottomOf="@id/gl_horizontal_0.4" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/app_name"
-                android:scaleType="centerCrop"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/header" />
+    <TextView
+        android:id="@+id/itemDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  "
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/gl_vertical_0.95"
+        app:layout_constraintStart_toEndOf="@id/gl_vertical_0.05"
+        app:layout_constraintTop_toBottomOf="@id/itemName" />
 
-            <ImageView
-                android:id="@+id/itemImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/macciato"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/tv_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Size"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/gl_vertical_0.05"
+        app:layout_constraintTop_toBottomOf="@id/itemDescription"
+        app:layout_constraintVertical_bias="0.1" />
 
-            <TextView
-                android:id="@+id/itemName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/macciato"
+    <Button
+        android:id="@+id/imgSmallSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Small"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/imgMediumSize"
+        app:layout_constraintStart_toEndOf="@id/gl_vertical_0.05"
+        app:layout_constraintTop_toBottomOf="@id/tv_size"
+        app:layout_constraintVertical_bias="0.05" />
 
-                android:textSize="@dimen/_12ssp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+    <Button
+        android:id="@+id/imgMediumSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medium"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/imgLargeSize"
+        app:layout_constraintStart_toEndOf="@id/imgSmallSize"
+        app:layout_constraintTop_toBottomOf="@id/tv_size"
+        app:layout_constraintVertical_bias="0.05" />
 
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/itemImage" />
+    <Button
+        android:id="@+id/imgLargeSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Large"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/gl_vertical_0.95"
+        app:layout_constraintStart_toEndOf="@id/imgMediumSize"
+        app:layout_constraintTop_toBottomOf="@id/tv_size"
+        app:layout_constraintVertical_bias="0.05" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:style="@style/add_button_style"
+        android:text="@string/plus"
+        android:textColor="@color/primaryDark"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/gl_vertical_0.05"
+        app:layout_constraintTop_toBottomOf="@id/imgSmallSize"
+        app:layout_constraintEnd_toStartOf="@id/amountText"
+        app:layout_constraintVertical_bias="0.2" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/addToCartButton"
-            style="@style/button_style"
-            android:layout_margin="@dimen/_20sdp"
-            android:text="@string/add_to_cart"
-            app:flow_firstVerticalBias="0."
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/view11"
-            app:layout_constraintVertical_bias="0.7" />
+    <TextView
+        android:id="@+id/amountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zero"
+        android:textSize="@dimen/_20sdp"
+        app:layout_constraintStart_toEndOf="@id/addButton"
+        app:layout_constraintEnd_toStartOf="@id/removeButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgSmallSize"
+        app:layout_constraintVertical_bias="0.2"/>
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/removeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:style="@style/remove_button_style"
+        android:text="@string/dash"
+        android:textColor="@color/primaryDark"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/gl_vertical_0.95"
+        app:layout_constraintTop_toBottomOf="@id/imgSmallSize"
+        app:layout_constraintStart_toEndOf="@id/amountText"
+        app:layout_constraintVertical_bias="0.2" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.93" />
+    <TextView
+        android:id="@+id/priceTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price in EGP"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/gl_vertical_0.05"
+        app:layout_constraintTop_toBottomOf="@id/addButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.2"/>
 
+    <TextView
+        android:id="@+id/totalPriceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="25sp"
+        app:layout_constraintTop_toBottomOf="@id/priceTitle"
+        app:layout_constraintStart_toEndOf="@id/gl_vertical_0.05"/>
 
-        <TextView
-            android:id="@+id/Additions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:text="@string/additions"
-            app:layout_constraintBottom_toTopOf="@+id/view11"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view9" />
-
-        <View
-            android:id="@+id/view8"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="90dp"
-            android:background="#8C746A"
-            app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
-
-        <View
-            android:id="@+id/view9"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="73dp"
-
-            android:background="#8C746A"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view10" />
-
-        <View
-            android:id="@+id/view10"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="70dp"
-            android:background="#8C746A"
-            app:layout_constraintTop_toBottomOf="@+id/view8" />
-
-        <View
-            android:id="@+id/view11"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="71dp"
-            android:background="#8C746A"
-            app:layout_constraintTop_toBottomOf="@+id/view9" />
-
-        <ImageView
-            android:id="@+id/imgSmallSize"
-            android:layout_width="@dimen/_28sdp"
-            android:layout_height="@dimen/_28sdp"
-            android:layout_marginEnd="33dp"
-            android:layout_marginBottom="16dp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_cub_not_selected"
-            app:layout_constraintBottom_toTopOf="@+id/view10"
-            app:layout_constraintEnd_toStartOf="@+id/imgMediumSize" />
-
-
-        <ImageView
-            android:id="@+id/imgMediumSize"
-            android:layout_width="@dimen/_35sdp"
-            android:layout_height="@dimen/_35sdp"
-            android:layout_marginEnd="30dp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_cub_not_selected"
-            app:layout_constraintBottom_toBottomOf="@+id/imgSmallSize"
-            app:layout_constraintEnd_toStartOf="@+id/imgLargeSize" />
-
-        <ImageView
-            android:id="@+id/imgLargeSize"
-            android:layout_width="@dimen/_38sdp"
-            android:layout_height="@dimen/_38sdp"
-            android:layout_marginEnd="85dp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_cub_not_selected"
-            app:layout_constraintBottom_toBottomOf="@+id/imgMediumSize"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <TextView
-            android:id="@+id/sizeText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="21dp"
-            android:text="@string/size"
-            app:layout_constraintBottom_toTopOf="@+id/view10"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/view8" />
-
-        <TextView
-            android:id="@+id/itemPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="20dp"
-            android:text="@string/price"
-            app:layout_constraintBottom_toTopOf="@+id/view8"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
-
-        <TextView
-            android:id="@+id/sugarText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:text="@string/sugar"
-            app:layout_constraintBottom_toTopOf="@+id/view9"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view10" />
-
-        <ImageView
-            android:id="@+id/noSugar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_marginStart="77dp"
-            android:layout_marginBottom="20dp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_no_sugar"
-            app:layout_constraintBottom_toTopOf="@+id/view9"
-            app:layout_constraintEnd_toStartOf="@+id/oneSugar"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"
-            app:layout_constraintStart_toEndOf="@+id/sugarText" />
-
-        <ImageView
-            android:id="@+id/oneSugar"
-            android:layout_width="@dimen/_10sdp"
-
-            android:layout_height="@dimen/_10sdp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_one_sugar"
-            app:layout_constraintBottom_toBottomOf="@+id/noSugar"
-            app:layout_constraintEnd_toStartOf="@+id/twoSugar"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/noSugar" />
-
-        <ImageView
-            android:id="@+id/twoSugar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/sugar_two"
-            app:layout_constraintBottom_toBottomOf="@+id/oneSugar"
-            app:layout_constraintEnd_toStartOf="@+id/threeSugar"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/oneSugar" />
-
-        <ImageView
-            android:id="@+id/threeSugar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="34dp"
-
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_three_sugar"
-            app:layout_constraintBottom_toBottomOf="@+id/twoSugar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/twoSugar" />
-
-        <ImageView
-            android:id="@+id/addCream"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="25dp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_cream"
-            app:layout_constraintBottom_toTopOf="@+id/view11"
-            app:layout_constraintEnd_toStartOf="@+id/addDrawings"
-            app:layout_constraintStart_toEndOf="@+id/Additions" />
-
-        <ImageView
-            android:id="@+id/addDrawings"
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="140dp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/vanilla"
-            app:layout_constraintBottom_toBottomOf="@+id/addCream"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <TextView
-            android:id="@+id/totalText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="50dp"
-            android:text="@string/total"
-            app:layout_constraintBottom_toTopOf="@+id/addToCartButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view11" />
-
-        <TextView
-            android:id="@+id/totalPriceText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="27dp"
-            android:text="@string/price_egp"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="@+id/totalText"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view11" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/removeButton"
-            style="@style/remove_button_style"
-            android:layout_width="50dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginBottom="30dp"
-            android:text="@string/dash"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/view8"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/addButton"
-            style="@style/add_button_style"
-            android:layout_width="50dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="30dp"
-            android:text="@string/plus"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/view8"
-            app:layout_constraintEnd_toStartOf="@+id/amountText"
-            app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
-
-        <TextView
-            android:id="@+id/amountText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="30dp"
-            android:text="@string/zero"
-            android:textSize="@dimen/_20sdp"
-            app:layout_constraintBottom_toTopOf="@+id/view8"
-            app:layout_constraintEnd_toStartOf="@+id/removeButton"
-            app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Add to Cart"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/primaryDark"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@id/gl_vertical_0.95"
+        app:layout_constraintStart_toEndOf="@id/gl_vertical_0.3"
+        app:layout_constraintTop_toBottomOf="@id/priceTitle"/>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
