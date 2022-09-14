@@ -71,4 +71,12 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     //  Switcher
     implementation 'io.github.bitvale:switcher:1.1.2'
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
+
+    //OkHttp Libraries
+    implementation 'com.squareup.okhttp3:okhttp:3.14.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.14.0'
 }
