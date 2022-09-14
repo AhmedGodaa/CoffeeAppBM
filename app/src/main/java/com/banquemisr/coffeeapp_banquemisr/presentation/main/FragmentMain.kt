@@ -2,10 +2,11 @@ package com.banquemisr.coffeeapp_banquemisr.presentation.main
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.banquemisr.coffeeapp_banquemisr.R
 import com.banquemisr.coffeeapp_banquemisr.common.Constants
@@ -26,15 +27,18 @@ class FragmentMain : Fragment(), MenuListener {
         binding = FragmentHomeBinding.inflate(layoutInflater)
 
         val coffees: ArrayList<Coffee> = ArrayList()
-        coffees.add(Coffee(name = "Espresso", icon = R.drawable.ic_espresso, unitPrice = 10.0f))
-        coffees.add(Coffee(name = "Cappuccino", icon = R.drawable.ic_cappuccino, unitPrice = 15.0f))
-        coffees.add(Coffee(name = "Macciato", icon = R.drawable.ic_macciato, unitPrice = 25.0f))
-        coffees.add(Coffee(name = "Mocha", icon = R.drawable.ic_mocha, unitPrice = 35.0f))
-        coffees.add(Coffee(name = "Latte", icon = R.drawable.ic_latte, unitPrice = 40.0f))
+        coffees.add(Coffee(name = "Espresso", icon = R.drawable.ic_espresso, unitPrice = 10))
+        coffees.add(Coffee(name = "Cappuccino", icon = R.drawable.ic_cappuccino, unitPrice = 15))
+        coffees.add(Coffee(name = "Macciato", icon = R.drawable.ic_macciato, unitPrice = 25))
+        coffees.add(Coffee(name = "Mocha", icon = R.drawable.ic_mocha, unitPrice = 35))
+        coffees.add(Coffee(name = "Latte", icon = R.drawable.ic_latte, unitPrice = 40))
         val adapter = MenuAdapter(coffees, this)
         binding.recyclerView.setHasFixedSize(true)
+        binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.recyclerView.adapter = adapter
-        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+
+//        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         return binding.root
     }

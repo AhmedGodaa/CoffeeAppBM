@@ -24,4 +24,7 @@ interface ApiService {
 //    fun getProducts()
     @POST("/")
     fun userOrder(@Body userOrder: UserOrder): Call<OrderDto>
+
+    @POST("/")
+    fun getAll(@Body userOrder: UserOrder): Call<OrderDto>
 }

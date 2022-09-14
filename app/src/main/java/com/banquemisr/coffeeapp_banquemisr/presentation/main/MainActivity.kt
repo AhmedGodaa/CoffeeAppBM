@@ -2,6 +2,7 @@ package com.banquemisr.coffeeapp_banquemisr.presentation.main
 
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.animation.AnimationUtils
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity(), MenuListener,
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         binding.floatingActionButton.setOnClickListener {
             val fragmentMain = FragmentMain()
             val fm = supportFragmentManager

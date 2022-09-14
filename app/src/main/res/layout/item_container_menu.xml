@@ -1,42 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/_80sdp">
+    android:id="@+id/layoutNote"
+    android:layout_width="@dimen/_120sdp"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_15sdp"
+    android:background="@drawable/background_note"
+    android:orientation="vertical">
 
-    <ImageView
+
+    <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/imgIcon"
-        android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_40sdp"
-        android:layout_marginStart="@dimen/_20sdp"
-        android:src="@drawable/ic_macciato"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imgGo"
-        android:layout_width="@dimen/_30sdp"
-        android:layout_height="@dimen/_30sdp"
-        android:layout_marginEnd="@dimen/_20sdp"
-        android:src="@drawable/ic_back"
-        android:rotationY="180"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_120sdp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_mocha"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_corner_radius_top_left="@dimen/_10sdp"
+        app:riv_corner_radius_top_right="@dimen/_10sdp" />
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imgGo"-->
+    <!--        android:layout_width="@dimen/_30sdp"-->
+    <!--        android:layout_height="@dimen/_30sdp"-->
+    <!--        android:layout_marginEnd="@dimen/_20sdp"-->
+    <!--        android:rotationY="180"-->
+    <!--        android:src="@drawable/ic_back"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
 
     <TextView
         android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:includeFontPadding="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13ssp"
+        android:transitionName="titleTransition"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgIcon" />
+
+    <ImageView
+        android:id="@+id/imgBackgroundPrice"
+        android:layout_width="@dimen/matchConstraint"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_margin="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:alpha="0.3"
+        android:background="@drawable/background_price"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <TextView
+        android:id="@+id/tvPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Example"
-        android:textSize="@dimen/_15ssp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/imgGo"
-        app:layout_constraintStart_toEndOf="@id/imgIcon"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginStart="@dimen/_10sdp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:maxLength="6"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15sdp"
+        app:layout_constraintBottom_toBottomOf="@id/imgBackgroundPrice"
+        app:layout_constraintStart_toStartOf="@id/imgBackgroundPrice"
+        app:layout_constraintTop_toTopOf="@id/imgBackgroundPrice" />
 
 
+    <View
+        android:id="@+id/viewAdd"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:background="@drawable/background_note"
+        android:backgroundTint="@color/primaryDark"
+        app:layout_constraintBottom_toBottomOf="@id/imgBackgroundPrice"
+        app:layout_constraintEnd_toEndOf="@id/imgBackgroundPrice"
+        app:layout_constraintTop_toTopOf="@id/imgBackgroundPrice" />
 
-
+    <ImageView
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:background="@drawable/ic_add_white"
+        app:layout_constraintBottom_toBottomOf="@id/viewAdd"
+        app:layout_constraintEnd_toEndOf="@id/viewAdd"
+        app:layout_constraintStart_toStartOf="@id/viewAdd"
+        app:layout_constraintTop_toTopOf="@id/viewAdd"
+        app:tint="@color/white" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+

@@ -16,16 +16,16 @@ import kotlinx.coroutines.launch
 class OrderActivity : AppCompatActivity() {
 
     private var count: Int = 1
-    private var sizeCurrentCoefficient: Float = 1.0f
-    private var sizeSmallCoefficient: Float = 1.0f
-    private var sizeMediumCoefficient: Float = 2.0f
-    private var sizeLargeCoefficient: Float = 3.0f
+    private var sizeCurrentCoefficient: Int = 1
+    private var sizeSmallCoefficient: Int = 1
+    private var sizeMediumCoefficient: Int = 2
+    private var sizeLargeCoefficient: Int = 3
     private var isSmall: Boolean = true
     private var isMedium: Boolean = false
     private var isLarge: Boolean = false
     private var selectedSugar = -1
-    private var itemPrice: Float = 10.0f
-    private var totalPrice: Float = 10.0f
+    private var itemPrice: Int = 10
+    private var totalPrice: Int = 10
     private lateinit var viewModel: CartViewModel
     private var coffeeName: String = ""
 
@@ -52,7 +52,7 @@ class OrderActivity : AppCompatActivity() {
     }
 
     private fun getOrderData() {
-        itemPrice = intent.getFloatExtra(Constants.KEY_MENU_PRICE, 0.0f)
+        itemPrice = intent.getIntExtra(Constants.KEY_MENU_PRICE, 0)
         totalPrice = itemPrice //initially the total price is the item's price
         coffeeName = intent.getStringExtra(Constants.KEY_MENU_NAME).toString()
         binding.itemName.text = coffeeName
@@ -100,34 +100,34 @@ class OrderActivity : AppCompatActivity() {
 
             largeCup()
         }
-        //no Sugar
-        binding.noSugar.setOnClickListener {
-            binding.noSugar.alpha = 1.0f
-            binding.oneSugar.alpha = 0.3f
-            binding.twoSugar.alpha = 0.3f
-            binding.threeSugar.alpha = 0.3f
+//        //no Sugar
+//        binding.noSugar.setOnClickListener {
+//            binding.noSugar.alpha = 1.0f
+//            binding.oneSugar.alpha = 0.3f
+//            binding.twoSugar.alpha = 0.3f
+//            binding.threeSugar.alpha = 0.3f
+//
+//            selectedSugar = 0
+//        }
+//        //select one sugar
+//        binding.oneSugar.setOnClickListener {
+//            binding.noSugar.alpha = 0.3f
+//            binding.oneSugar.alpha = 1.0f
+//            binding.twoSugar.alpha = 0.3f
+//            binding.threeSugar.alpha = 0.3f
+//
+//            selectedSugar = 0
+//        }
 
-            selectedSugar = 0
-        }
-        //select one sugar
-        binding.oneSugar.setOnClickListener {
-            binding.noSugar.alpha = 0.3f
-            binding.oneSugar.alpha = 1.0f
-            binding.twoSugar.alpha = 0.3f
-            binding.threeSugar.alpha = 0.3f
-
-            selectedSugar = 0
-        }
-
-        // Select two sugar
-        binding.twoSugar.setOnClickListener {
-            binding.noSugar.alpha = 0.3f
-            binding.oneSugar.alpha = 0.3f
-            binding.twoSugar.alpha = 1.0f
-            binding.threeSugar.alpha = 0.3f
-
-            selectedSugar = 0
-        }
+//        // Select two sugar
+//        binding.twoSugar.setOnClickListener {
+//            binding.noSugar.alpha = 0.3f
+//            binding.oneSugar.alpha = 0.3f
+//            binding.twoSugar.alpha = 1.0f
+//            binding.threeSugar.alpha = 0.3f
+//
+//            selectedSugar = 0
+//        }
 
         binding.addToCartButton.setOnClickListener {
             var size = ""
@@ -145,7 +145,7 @@ class OrderActivity : AppCompatActivity() {
                 size = size,
                 sugar = "zero",
                 totalPrice = totalPrice,
-                icon = intent.getIntExtra(Constants.KEY_MENU_ICON,0)
+                icon = intent.getIntExtra(Constants.KEY_MENU_ICON, 0)
             )
             lifecycleScope.launch {
                 viewModel.insertOrder(coffeeOrder)
@@ -155,15 +155,15 @@ class OrderActivity : AppCompatActivity() {
         }
 
 
-        // Select three sugar
-        binding.threeSugar.setOnClickListener {
-            binding.noSugar.alpha = 0.3f
-            binding.oneSugar.alpha = 0.3f
-            binding.twoSugar.alpha = 0.3f
-            binding.threeSugar.alpha = 1.0f
-            selectedSugar = 0
-        }
-
+//        // Select three sugar
+//        binding.threeSugar.setOnClickListener {
+//            binding.noSugar.alpha = 0.3f
+//            binding.oneSugar.alpha = 0.3f
+//            binding.twoSugar.alpha = 0.3f
+//            binding.threeSugar.alpha = 1.0f
+//            selectedSugar = 0
+//        }
+//
 
     }
 

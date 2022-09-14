@@ -8,6 +8,7 @@
     tools:context=".presentation.welcome.WelcomeFragmentFirst">
 
     <TextView
+        android:id="@+id/tvWelcome"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_90sdp"
         android:layout_margin="20dp"
@@ -16,6 +17,7 @@
         android:text="@string/welcome"
         android:textColor="?attr/text_color_primary"
         android:textSize="@dimen/_30ssp" />
+
 
     <TextView
         android:layout_width="match_parent"
@@ -27,4 +29,11 @@
         android:textColor="@color/textSecondary"
         android:textSize="@dimen/_15ssp"
         app:layout_constraintWidth_max="wrap" />
+
+    <ImageView
+        android:id="@+id/imgWelcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_artwork" />
+
 </LinearLayout>

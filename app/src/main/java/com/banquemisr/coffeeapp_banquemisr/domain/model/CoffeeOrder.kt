@@ -15,7 +15,7 @@ data class CoffeeOrder(
     val count: Int?,
     val size: String?,
     val sugar: String?,
-    val totalPrice: Float?,
+    val totalPrice: Int?,
     val icon: Int,
 ) : Serializable
 

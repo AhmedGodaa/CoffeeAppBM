@@ -26,6 +26,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainer"
+            android:name="com.banquemisr.coffeeapp_banquemisr.presentation.main.FragmentMain"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout"
