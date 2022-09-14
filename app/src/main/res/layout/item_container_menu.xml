@@ -23,17 +23,6 @@
         app:riv_corner_radius_top_left="@dimen/_10sdp"
         app:riv_corner_radius_top_right="@dimen/_10sdp" />
 
-    <!--    <ImageView-->
-    <!--        android:id="@+id/imgGo"-->
-    <!--        android:layout_width="@dimen/_30sdp"-->
-    <!--        android:layout_height="@dimen/_30sdp"-->
-    <!--        android:layout_marginEnd="@dimen/_20sdp"-->
-    <!--        android:rotationY="180"-->
-    <!--        android:src="@drawable/ic_back"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
-
 
     <TextView
         android:id="@+id/tvTitle"
@@ -61,22 +50,41 @@
         android:layout_marginBottom="@dimen/_8sdp"
         android:alpha="0.3"
         android:background="@drawable/background_price"
+        android:backgroundTint="#1C1C1C"
+        android:contentDescription="@string/app_name"
+        android:outlineAmbientShadowColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:tint="@color/black_300" />
+
+    <TextView
+        android:id="@+id/tvDollarSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:maxLength="6"
+        android:text="@string/dollarSign"
+        android:textColor="@color/primaryDark"
+        android:textSize="@dimen/_15sdp"
+        app:layout_constraintBottom_toBottomOf="@id/imgBackgroundPrice"
+        app:layout_constraintStart_toStartOf="@id/imgBackgroundPrice"
+        app:layout_constraintTop_toTopOf="@id/imgBackgroundPrice" />
+
 
     <TextView
         android:id="@+id/tvPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_2sdp"
         android:fontFamily="@font/ubuntu_medium"
         android:maxLength="6"
         android:textColor="@color/white"
         android:textSize="@dimen/_15sdp"
         app:layout_constraintBottom_toBottomOf="@id/imgBackgroundPrice"
-        app:layout_constraintStart_toStartOf="@id/imgBackgroundPrice"
+        app:layout_constraintStart_toEndOf="@+id/tvDollarSign"
         app:layout_constraintTop_toTopOf="@id/imgBackgroundPrice" />
 
 
@@ -94,6 +102,7 @@
         android:layout_width="@dimen/_15sdp"
         android:layout_height="@dimen/_15sdp"
         android:background="@drawable/ic_add_white"
+        android:contentDescription="@string/app_name"
         app:layout_constraintBottom_toBottomOf="@id/viewAdd"
         app:layout_constraintEnd_toEndOf="@id/viewAdd"
         app:layout_constraintStart_toStartOf="@id/viewAdd"

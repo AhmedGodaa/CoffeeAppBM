@@ -10,7 +10,7 @@ import com.banquemisr.coffeeapp_banquemisr.databinding.FragmentWelcomeThirdBindi
 import com.banquemisr.coffeeapp_banquemisr.presentation.signin.SignInActivity
 import com.banquemisr.coffeeapp_banquemisr.presentation.signup.SignUpActivity
 
-class WelcomeFragmentThird : Fragment() {
+class WelcomeFragmentSecond : Fragment() {
     lateinit var binding: FragmentWelcomeThirdBinding
 
     override fun onCreateView(

@@ -10,7 +10,7 @@ class TabAccessorAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
     override fun getItem(position: Int): Fragment {
         return when (position) {
             0 -> WelcomeFragmentFirst()
-            1 -> WelcomeFragmentThird()
+            1 -> WelcomeFragmentSecond()
             else -> WelcomeFragmentFirst()
         }
     }

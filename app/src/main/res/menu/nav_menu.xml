@@ -12,6 +12,10 @@
                     android:id="@+id/menu_cart"
                     android:icon="@drawable/ic_profile"
                     android:title="@string/cart" />
+                <item
+                    android:id="@+id/menu_profile"
+                    android:icon="@drawable/ic_profile"
+                    android:title="@string/profile" />
 
 
             </group>
@@ -19,16 +23,10 @@
     </item>
 
 
-    <item android:title="@string/profile">
-        <menu>
-
-            <item
-                android:id="@+id/menu_profile"
-                android:icon="@drawable/ic_profile"
-                android:title="@string/profile" />
-
-        </menu>
-    </item>
+    <item
+        android:id="@+id/menu_signOut"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/logout" />
 
 
 </menu>

@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.banquemisr.coffeeapp_banquemisr.R
 import com.banquemisr.coffeeapp_banquemisr.common.Constants
 import com.banquemisr.coffeeapp_banquemisr.databinding.FragmentHomeBinding
@@ -17,7 +16,7 @@ import com.banquemisr.coffeeapp_banquemisr.presentation.menu.MenuListener
 import com.banquemisr.coffeeapp_banquemisr.presentation.order.OrderActivity
 
 
-class FragmentMain : Fragment(), MenuListener {
+class MainFragment : Fragment(), MenuListener {
     lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(

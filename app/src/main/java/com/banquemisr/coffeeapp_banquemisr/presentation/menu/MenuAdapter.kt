@@ -38,7 +38,7 @@ class MenuAdapter(
             }
             binding.imgIcon.setImageResource(model.icon)
             binding.tvTitle.text = model.name
-            binding.tvPrice.text = "$" + model.unitPrice.toString()
+            binding.tvPrice.text =  model.unitPrice.toString()
 
         }
     }

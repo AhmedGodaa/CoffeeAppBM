@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable-hdpi/background_note.xml" value="0.11" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable-mdpi/add.xml" value="0.1625" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable-mdpi/button_style_login.xml" value="0.1625" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable-mdpi/group_copy.xml" value="0.1625" />
@@ -30,6 +31,7 @@
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1265" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable-xhdpi/ic_back.xml" value="0.1785" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable/background_price.xml" value="0.1265" />
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable/background_radius.xml" value="0.11" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable/cart.xml" value="0.1265" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable/ic_add.xml" value="0.1265" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable/ic_add_white.xml" value="0.1265" />
@@ -45,7 +47,7 @@
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable/ic_three_sugar.xml" value="0.1265" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/drawable/ic_two_sugar.xml" value="0.1625" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/activity_cart.xml" value="0.17552083333333332" />
-        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/activity_main.xml" value="0.31189083820662766" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/activity_order.xml" value="0.22" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/activity_sign_in.xml" value="0.17552083333333332" />
         <entry key="..\:/Android/Projects/MyProjects/CoffeeAppBanqueMisr/app/src/main/res/layout/activity_sign_up.xml" value="0.16145833333333334" />
