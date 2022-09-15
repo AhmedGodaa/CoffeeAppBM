@@ -13,4 +13,9 @@ class CartRepo(private val db: CartDB) {
 
     }
 
+    suspend fun deleteAll() {
+        db.getCartDao().deleteAllOrders()
+
+    }
+
 }

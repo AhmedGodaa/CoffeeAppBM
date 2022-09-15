@@ -56,4 +56,6 @@
     <string name="navigation_drawer_close">Close Navigation drawer</string>
     <string name="dollarSign">$</string>
     <string name="logout">Logout</string>
+    <string name="change_languages">Change Languages</string>
+    <string name="account">Account</string>
 </resources>

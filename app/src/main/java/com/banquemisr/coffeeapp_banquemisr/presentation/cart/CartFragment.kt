@@ -4,18 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.banquemisr.coffeeapp_banquemisr.data.db.CartDB
 import com.banquemisr.coffeeapp_banquemisr.data.db.CartRepo
 import com.banquemisr.coffeeapp_banquemisr.databinding.FragmentCartBinding
+import kotlinx.coroutines.launch
 
 
 class CartFragment : Fragment() {
     lateinit var binding: FragmentCartBinding
     private lateinit var viewModel: CartViewModel
+    lateinit var adapter: CartAdapter
 
 
     override fun onCreateView(
@@ -26,15 +28,20 @@ class CartFragment : Fragment() {
         val repo = CartRepo(CartDB.getDatabase(requireContext()))
         val cartViewModelProvider = CartViewModelProvider(repo)
         viewModel = ViewModelProvider(this, cartViewModelProvider)[CartViewModel::class.java]
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
         viewModel.getAllOrders()
-        val adapter = CartAdapter(viewModel.list)
+        adapter = CartAdapter(viewModel.list)
         binding.recyclerView.setHasFixedSize(true)
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.btnOrder.setOnClickListener {
+            lifecycleScope.launch {
+                viewModel.deleteAll()
+                adapter.setData(emptyList())
+            }
+
+        }
+        return binding.root
     }
+
+
 }

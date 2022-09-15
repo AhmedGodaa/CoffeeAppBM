@@ -50,7 +50,7 @@
         android:layout_marginBottom="@dimen/_8sdp"
         android:alpha="0.3"
         android:background="@drawable/background_price"
-        android:backgroundTint="#1C1C1C"
+        android:backgroundTint="@color/background_primary"
         android:contentDescription="@string/app_name"
         android:outlineAmbientShadowColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"

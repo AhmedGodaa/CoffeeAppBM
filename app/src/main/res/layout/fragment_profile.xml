@@ -1,148 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/background_primary">
 
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/imageView3"
-        android:layout_width="@dimen/matchConstraint"
-        android:layout_height="@dimen/_180sdp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:lottie_autoPlay="true"
-        app:layout_constraintTop_toTopOf="parent"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/ic_lottie_profile"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/usernameTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="User Name"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/username_cardView"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
+        android:layout_height="wrap_content">
 
-        android:layout_marginTop="50dp"
 
-        android:layout_marginEnd="4dp"
-        android:backgroundTint="@color/primaryDark"
-        app:cardCornerRadius="15dp"
-        app:contentPadding="13dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usernameTxt">
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/imageView3"
+            android:layout_width="@dimen/matchConstraint"
+            android:layout_height="@dimen/_160sdp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/ic_lottie_profile"
+            tools:srcCompat="@tools:sample/avatars" />
 
-        <LinearLayout
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnUserData"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="@dimen/_50sdp"
+            android:layout_margin="@dimen/_15sdp"
+            android:background="@drawable/background_price"
+            android:backgroundTint="@color/background_secondary"
+            android:drawableStart="@drawable/ic_google_plus"
+            android:drawablePadding="@dimen/_20sdp"
+            android:paddingStart="@dimen/_20sdp"
+            android:text="@string/account"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView3" />
 
-            <TextView
-                android:id="@+id/usernameCardViewTxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="UserName:"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_16ssp"
-
-                />
-
-            <TextView
-                android:id="@+id/usernameCardView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:text="Mohamed Ayman"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_16ssp"
-
-                />
-
-
-        </LinearLayout>
-
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/Email_cardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="@dimen/_20sdp"
-
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="150dp"
-        android:backgroundTint="@color/primaryDark"
-        app:cardCornerRadius="15dp"
-        app:contentPadding="13dp"
-        app:layout_constraintTop_toBottomOf="@id/username_cardView">
-
-        <LinearLayout
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="@dimen/_50sdp"
+            android:layout_margin="@dimen/_15sdp"
+            android:background="@drawable/background_price"
+            android:backgroundTint="@color/background_secondary"
+            android:drawableStart="@drawable/ic_baseline_translate_24"
+            android:drawablePadding="@dimen/_20sdp"
+            android:paddingStart="@dimen/_20sdp"
+            android:text="@string/change_languages"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnUserData" />
 
-            <TextView
-                android:id="@+id/EmailCardViewTxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Email:"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_16ssp"
-
-                />
-
-            <TextView
-                android:id="@+id/EmailCardView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:text="UserrMail@mail.com"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_16ssp"
-
-                />
-
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/signoutBtn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="100dp"
-        android:background="@drawable/shape_button_one"
-        android:text="Sign Out"
-        android:textColor="@color/blue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-
-        />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_margin="@dimen/_15sdp"
+            android:background="@drawable/background_price"
+            android:backgroundTint="@color/background_secondary"
+            android:drawableStart="@drawable/ic_settings"
+            android:drawablePadding="@dimen/_20sdp"
+            android:paddingStart="@dimen/_20sdp"
+            android:text="@string/settings"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn2" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signoutBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_20sdp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="100dp"
+            android:background="@drawable/shape_button_one"
+            android:text="@string/sign_out"
+            android:textColor="@color/blue"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn3" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

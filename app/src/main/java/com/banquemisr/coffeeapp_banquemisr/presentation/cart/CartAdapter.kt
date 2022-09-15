@@ -8,7 +8,7 @@ import com.banquemisr.coffeeapp_banquemisr.domain.model.CoffeeOrder
 import com.banquemisr.coffeeapp_banquemisr.presentation.cart.CartAdapter.CoffeeOrderViewHolder
 
 
-class CartAdapter(private val data: List<CoffeeOrder>) :
+class CartAdapter(private var data: List<CoffeeOrder>) :
     RecyclerView.Adapter<CoffeeOrderViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CoffeeOrderViewHolder {
         val binding = ItemContainerCoffeeOrderBinding.inflate(
@@ -17,6 +17,12 @@ class CartAdapter(private val data: List<CoffeeOrder>) :
             false
         )
         return CoffeeOrderViewHolder(binding)
+    }
+
+    fun setData(data: List<CoffeeOrder>) {
+        this.data = data
+        notifyDataSetChanged()
+
     }
 
     override fun onBindViewHolder(holder: CoffeeOrderViewHolder, position: Int) {
@@ -38,6 +44,7 @@ class CartAdapter(private val data: List<CoffeeOrder>) :
             binding.tvTotalPrice.text = "Total: : " + model?.totalPrice
 //            binding.tvSize.text = "Size: " + model?.size
             binding.imgItem.setImageResource(model!!.icon)
+
 
         }
     }

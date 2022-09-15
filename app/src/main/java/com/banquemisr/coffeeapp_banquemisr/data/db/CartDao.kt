@@ -1,9 +1,6 @@
 package com.banquemisr.coffeeapp_banquemisr.data.db
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.banquemisr.coffeeapp_banquemisr.domain.model.CoffeeOrder
 
 @Dao
@@ -13,4 +10,7 @@ interface CartDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertOrder(article: CoffeeOrder)
+
+    @Query("DELETE FROM coffee_order")
+    suspend fun deleteAllOrders()
 }

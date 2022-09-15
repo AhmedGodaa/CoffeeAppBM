@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
 import com.banquemisr.coffeeapp_banquemisr.R
+import com.banquemisr.coffeeapp_banquemisr.common.PreferencesManager
 import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivityMainBinding
 import com.banquemisr.coffeeapp_banquemisr.domain.model.Coffee
@@ -14,6 +16,7 @@ import com.banquemisr.coffeeapp_banquemisr.presentation.cart.CartFragment
 import com.banquemisr.coffeeapp_banquemisr.presentation.menu.MenuListener
 import com.banquemisr.coffeeapp_banquemisr.presentation.order.OrderActivity
 import com.banquemisr.coffeeapp_banquemisr.presentation.profile.FragmentProfile
+import com.banquemisr.coffeeapp_banquemisr.presentation.signin.SignInActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
@@ -21,10 +24,15 @@ import com.google.android.material.navigation.NavigationView
 class MainActivity : AppCompatActivity(), MenuListener,
     NavigationView.OnNavigationItemSelectedListener {
     lateinit var binding: ActivityMainBinding
+    private lateinit var preferenceManager: PreferencesManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        preferenceManager = PreferencesManager(applicationContext)
+        changeMode()
+
 
 
         binding.floatingActionButton.setOnClickListener {
@@ -57,8 +65,6 @@ class MainActivity : AppCompatActivity(), MenuListener,
     }
 
 
-
-
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.menu_home) {
             val mainFragment = MainFragment()
@@ -85,6 +91,14 @@ class MainActivity : AppCompatActivity(), MenuListener,
             ft.commit()
             binding.drawerLayout.closeDrawer(GravityCompat.START)
         }
+        if (item.itemId == R.id.menu_signOut) {
+            preferenceManager.clear()
+            preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, false)
+            val intent = Intent(this, SignInActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            startActivity(intent)
+            finish()
+        }
 
 
 
@@ -95,8 +109,28 @@ class MainActivity : AppCompatActivity(), MenuListener,
         TODO("Not yet implemented")
     }
 
-
-
+    private fun changeMode() {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            binding.switch1.setChecked(true)
+        } else {
+            binding.switch1.setChecked(false)
+        }
+        binding.switch1.setOnCheckedChangeListener { v ->
+            if (v) {
+                preferenceManager.putBoolean(
+                    Constants.THEME_BOOLEAN,
+                    true
+                )
+                theme
+            } else {
+                preferenceManager.putBoolean(
+                    Constants.THEME_BOOLEAN,
+                    false
+                )
+                theme
+            }
+        }
+    }
 
 
     override fun onClick(model: Coffee) {

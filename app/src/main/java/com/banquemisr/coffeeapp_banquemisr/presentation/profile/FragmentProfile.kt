@@ -1,50 +1,42 @@
 package com.banquemisr.coffeeapp_banquemisr.presentation.profile
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
+import com.banquemisr.coffeeapp_banquemisr.common.PreferencesManager
+import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants
 import com.banquemisr.coffeeapp_banquemisr.databinding.FragmentProfileBinding
+import com.banquemisr.coffeeapp_banquemisr.presentation.signin.SignInActivity
 
 
 class FragmentProfile : Fragment() {
     lateinit var binding: FragmentProfileBinding
+    private lateinit var preferenceManager: PreferencesManager
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentProfileBinding.inflate(layoutInflater)
+        preferenceManager = PreferencesManager(requireContext())
+        binding.signoutBtn.setOnClickListener {
+            preferenceManager.clear()
+            preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, false)
+            val intent = Intent(requireContext(), SignInActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            startActivity(intent)
+            requireActivity().finish()
+
+
+        }
 
         return binding.root
     }
-
-
-//    private fun changeMode() {
-//        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
-//            binding!!.switch1.setChecked(true)
-//        } else {
-//            binding!!.switch1.setChecked(false)
-//        }
-//        binding!!.switch1.setOnCheckedChangeListener { v ->
-//            if (v) {
-//                preferencesManager?.putBoolean(
-//                    Constants.THEME_BOOLEAN,
-//                    true
-//                )
-//                getTheme(applicationContext)
-//            } else {
-//                preferencesManager?.putBoolean(
-//                    Constants.THEME_BOOLEAN,
-//                    false
-//                )
-//                getTheme(applicationContext)
-//            }
-//        }
-//    }
-//
 
 
 }

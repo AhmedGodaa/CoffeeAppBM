@@ -15,8 +15,7 @@ class CartViewModel(
     val list: List<CoffeeOrder> = _list
 
 
-
-     fun getAllOrders() {
+    fun getAllOrders() {
         viewModelScope.launch(Dispatchers.Default) {
             cartRepo.getAllOrders().forEach {
                 _list.add(it)
@@ -31,4 +30,9 @@ class CartViewModel(
             cartRepo.insertOrder(order)
 
         }
+
+    suspend fun deleteAll() {
+        cartRepo.deleteAll()
+
+    }
 }
