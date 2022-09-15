@@ -61,6 +61,8 @@ class SignInActivity : AppCompatActivity() {
         val user = UserLogIn(email = email, password = password)
 
         signInViewModel.getLoginResponseLiveData(user).observe(this) {
+            preferencesManager.putString(Constants.KEY_TOKEN, it.token.toString())
+            Constants.TOKEN = it.token.toString()
             if (Constants.loginFlag) {
                 preferencesManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true)
                 val intent = Intent(this, MainActivity::class.java)

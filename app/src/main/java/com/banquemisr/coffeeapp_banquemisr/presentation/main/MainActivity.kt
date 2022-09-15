@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
 import com.banquemisr.coffeeapp_banquemisr.R
 import com.banquemisr.coffeeapp_banquemisr.common.PreferencesManager
+import com.banquemisr.coffeeapp_banquemisr.common.showToast
 import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivityMainBinding
 import com.banquemisr.coffeeapp_banquemisr.domain.model.Coffee
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity(), MenuListener,
         setContentView(binding.root)
         preferenceManager = PreferencesManager(applicationContext)
         changeMode()
+        showToast(preferenceManager.getString(Constants.KEY_TOKEN).toString())
 
 
 
@@ -105,9 +107,6 @@ class MainActivity : AppCompatActivity(), MenuListener,
         return true
     }
 
-    private fun signOut() {
-        TODO("Not yet implemented")
-    }
 
     private fun changeMode() {
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {

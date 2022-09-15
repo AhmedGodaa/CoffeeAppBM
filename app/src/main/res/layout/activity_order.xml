@@ -102,7 +102,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/imgMediumSize"
         app:layout_constraintStart_toEndOf="@id/gl_vertical_0.05"
-        app:layout_constraintTop_toBottomOf="@id/tv_size"
+        app:layout_constraintTop_toBottomOf="@id/itemDescription"
         app:layout_constraintVertical_bias="0.05" />
 
     <Button
@@ -111,11 +111,12 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/background_secondary"
         android:text="Medium"
+
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/imgLargeSize"
         app:layout_constraintStart_toEndOf="@id/imgSmallSize"
-        app:layout_constraintTop_toBottomOf="@id/tv_size"
+        app:layout_constraintTop_toBottomOf="@id/itemDescription"
         app:layout_constraintVertical_bias="0.05" />
 
     <Button
@@ -128,48 +129,86 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/gl_vertical_0.95"
         app:layout_constraintStart_toEndOf="@id/imgMediumSize"
-        app:layout_constraintTop_toBottomOf="@id/tv_size"
+        app:layout_constraintTop_toBottomOf="@id/itemDescription"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <Button
+        android:id="@+id/imgLittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/background_secondary"
+        android:text="1"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/imgMediumSize"
+        app:layout_constraintStart_toEndOf="@id/gl_vertical_0.05"
+        app:layout_constraintTop_toBottomOf="@id/imgSmallSize"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <Button
+        android:id="@+id/imgMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/background_secondary"
+        android:text="2"
+
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/imgLargeSize"
+        app:layout_constraintStart_toEndOf="@id/imgSmallSize"
+        app:layout_constraintTop_toBottomOf="@id/imgMediumSize"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/background_secondary"
+        android:text="3"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/gl_vertical_0.95"
+        app:layout_constraintStart_toEndOf="@id/imgMediumSize"
+        app:layout_constraintTop_toBottomOf="@id/imgLargeSize"
         app:layout_constraintVertical_bias="0.05" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/addButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
         android:text="@string/plus"
         android:textColor="@color/primaryDark"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/amountText"
         app:layout_constraintStart_toStartOf="@id/gl_vertical_0.05"
-        app:layout_constraintTop_toBottomOf="@id/imgSmallSize"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintTop_toBottomOf="@+id/imgLittle" />
 
     <TextView
         android:id="@+id/amountText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
         android:text="@string/zero"
         android:textColor="@color/white"
         android:textSize="@dimen/_20sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/removeButton"
         app:layout_constraintStart_toEndOf="@id/addButton"
-        app:layout_constraintTop_toBottomOf="@id/imgSmallSize"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintTop_toBottomOf="@+id/imgMedium" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/removeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:layout_marginTop="@dimen/_20sdp"
         android:text="@string/dash"
         android:textColor="@color/primaryDark"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/gl_vertical_0.95"
         app:layout_constraintStart_toEndOf="@id/amountText"
-        app:layout_constraintTop_toBottomOf="@id/imgSmallSize"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintTop_toBottomOf="@id/btn3"
+
+        />
 
     <TextView
         android:id="@+id/priceTitle"

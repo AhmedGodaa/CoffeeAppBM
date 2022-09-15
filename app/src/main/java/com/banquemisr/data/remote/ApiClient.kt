@@ -7,6 +7,7 @@ import okhttp3.OkHttpClient
 import com.banquemisr.coffeeapp_banquemisr.domain.repositories.OAuthInterceptor
 
 object ApiClient {
+
     var retrofit: Retrofit? = null
         get() {
             if (field == null) {
