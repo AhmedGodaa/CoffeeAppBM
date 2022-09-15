@@ -5,9 +5,8 @@ import com.banquemisr.coffeeapp_banquemisr.R
 import com.banquemisr.coffeeapp_banquemisr.common.Constants.loginFlag
 import com.banquemisr.coffeeapp_banquemisr.domain.model.Coffee
 import com.banquemisr.data.remote.ApiClient
-import com.banquemisr.data.remote.ApiService
-import com.example.example.ProductJsonObject
 import com.banquemisr.coffeeapp_banquemisr.common.Constants.coffees
+import com.banquemisr.coffeeapp_banquemisr.data.remote.ApiService
 import com.example.example.Product
 import retrofit2.Call
 import retrofit2.Callback
@@ -18,7 +17,7 @@ class ProductRepository {
     fun getOnlineProducts() {
 
 
-        apiService.getProducts()?.enqueue(object : Callback<ArrayList<Product>?> {
+        apiService.getProducts().enqueue(object : Callback<ArrayList<Product>?> {
             override fun onResponse(
                 call: Call<ArrayList<Product>?>,
                 response: Response<ArrayList<Product>?>
@@ -32,7 +31,7 @@ class ProductRepository {
                             Coffee(
                                 name = item.productName.toString(),
                                 icon = R.drawable.ic_espresso,
-                                unitPrice = item.productPrice?.toFloat(),
+                                unitPrice = item.productPrice,
                                 id = item.productId!!.toInt(),
                                 imageUrl = item.ProductImage.toString()
                             )

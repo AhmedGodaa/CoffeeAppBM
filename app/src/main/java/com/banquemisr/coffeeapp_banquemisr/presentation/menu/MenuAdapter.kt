@@ -1,18 +1,13 @@
 package com.banquemisr.coffeeapp_banquemisr.presentation.menu
 
 import android.content.Context
-import androidx.recyclerview.widget.RecyclerView
-import com.banquemisr.coffeeapp_banquemisr.presentation.menu.MenuAdapter.MenuViewHolder
-import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.banquemisr.coffeeapp_banquemisr.databinding.ItemContainerMenuBinding
 import com.banquemisr.coffeeapp_banquemisr.domain.model.Coffee
 import com.banquemisr.coffeeapp_banquemisr.presentation.menu.MenuAdapter.MenuViewHolder
-import com.banquemisr.coffeeapp_banquemisr.domain.model.Menu
 import com.bumptech.glide.Glide
-import java.util.ArrayList
 
 class MenuAdapter(
     private val data: ArrayList<Coffee>,
