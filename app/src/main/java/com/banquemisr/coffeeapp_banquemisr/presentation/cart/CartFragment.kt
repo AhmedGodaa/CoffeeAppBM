@@ -17,7 +17,7 @@ import kotlinx.coroutines.launch
 class CartFragment : Fragment() {
     lateinit var binding: FragmentCartBinding
     private lateinit var viewModel: CartViewModel
-    lateinit var adapter: CartAdapter
+    private lateinit var adapter: CartAdapter
 
 
     override fun onCreateView(
@@ -34,6 +34,7 @@ class CartFragment : Fragment() {
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.btnOrder.setOnClickListener {
+//            viewModel.orderCart()
             lifecycleScope.launch {
                 viewModel.deleteAll()
                 adapter.setData(emptyList())

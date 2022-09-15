@@ -1,9 +1,12 @@
 package com.banquemisr.coffeeapp_banquemisr.presentation.cart
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.banquemisr.coffeeapp_banquemisr.domain.model.CoffeeOrder
 import com.banquemisr.coffeeapp_banquemisr.data.db.CartRepo
+import com.banquemisr.coffeeapp_banquemisr.data.remote.OrderDto
+import com.banquemisr.coffeeapp_banquemisr.domain.model.CoffeeOrder
+import com.banquemisr.coffeeapp_banquemisr.domain.model.UserOrder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -34,5 +37,9 @@ class CartViewModel(
     suspend fun deleteAll() {
         cartRepo.deleteAll()
 
+    }
+
+    fun orderCart(userOrder: UserOrder): LiveData<OrderDto> {
+       return cartRepo.orderCart(userOrder)
     }
 }
