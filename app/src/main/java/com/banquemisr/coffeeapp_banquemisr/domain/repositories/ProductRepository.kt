@@ -2,10 +2,10 @@ package com.banquemisr.coffeeapp_banquemisr.domain.repositories
 
 import android.util.Log
 import com.banquemisr.coffeeapp_banquemisr.R
-import com.banquemisr.coffeeapp_banquemisr.common.Constants.loginFlag
+import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants.loginFlag
 import com.banquemisr.coffeeapp_banquemisr.domain.model.Coffee
 import com.banquemisr.data.remote.ApiClient
-import com.banquemisr.coffeeapp_banquemisr.common.Constants.coffees
+import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants.coffees
 import com.banquemisr.coffeeapp_banquemisr.data.remote.ApiService
 import com.example.example.Product
 import retrofit2.Call

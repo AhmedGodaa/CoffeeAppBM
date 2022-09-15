@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.banquemisr.coffeeapp_banquemisr.R
-import com.banquemisr.coffeeapp_banquemisr.common.Constants
+import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants
 import com.banquemisr.coffeeapp_banquemisr.databinding.FragmentHomeBinding
 import com.banquemisr.coffeeapp_banquemisr.domain.model.Coffee
 import com.banquemisr.coffeeapp_banquemisr.domain.repositories.ProductRepository
@@ -44,7 +44,7 @@ class MainFragment : Fragment(), MenuListener {
         binding.recyclerView.adapter = adapter
 
 
-//        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
 
         return binding.root
     }
@@ -54,6 +54,7 @@ class MainFragment : Fragment(), MenuListener {
         intent.putExtra(Constants.KEY_MENU_ICON, model.icon)
         intent.putExtra(Constants.KEY_MENU_NAME, model.name)
         intent.putExtra(Constants.KEY_MENU_PRICE, model.unitPrice)
+        intent.putExtra(Constants.KEY_IMAGE_URL,model.imageUrl)
         startActivity(intent)
     }
 
@@ -63,15 +64,6 @@ class MainFragment : Fragment(), MenuListener {
 
     }
 
-    override fun onResume() {
-        super.onResume()
-//
-//        val adapter = MenuAdapter(coffees, this, requireContext())
-//        binding.recyclerView.setHasFixedSize(true)
-//        binding.recyclerView.adapter = adapter
-//        binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
-
-    }
 
 
 }

@@ -2,7 +2,7 @@ package com.banquemisr.coffeeapp_banquemisr.common
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.banquemisr.coffeeapp_banquemisr.common.Constants
+import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants
 
 class PreferencesManager(context: Context) {
     var sharedPreferences: SharedPreferences

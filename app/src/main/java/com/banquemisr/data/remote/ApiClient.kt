@@ -1,8 +1,7 @@
 package com.banquemisr.data.remote
 
-import com.banquemisr.coffeeapp_banquemisr.common.Constants
+import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants
 import retrofit2.Retrofit
-import com.banquemisr.data.remote.ApiClient
 import retrofit2.converter.gson.GsonConverterFactory
 import okhttp3.OkHttpClient
 import com.banquemisr.coffeeapp_banquemisr.domain.repositories.OAuthInterceptor

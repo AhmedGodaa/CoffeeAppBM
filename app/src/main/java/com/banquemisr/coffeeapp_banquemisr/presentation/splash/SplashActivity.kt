@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.banquemisr.coffeeapp_banquemisr.R
-import com.banquemisr.coffeeapp_banquemisr.common.Constants
+import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants
 import com.banquemisr.coffeeapp_banquemisr.common.PreferencesManager
 import com.banquemisr.coffeeapp_banquemisr.common.openActivity
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivitySplashBinding

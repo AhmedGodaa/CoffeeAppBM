@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
-    android:background="@color/orderBackground"
+    android:background="@color/background_primary"
     tools:context=".presentation.order.OrderActivity">
 
     <androidx.constraintlayout.widget.Guideline
@@ -12,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.46" />
+        app:layout_constraintGuide_percent="0.41" />
 
     <androidx.constraintlayout.widget.Guideline
 
@@ -63,6 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_15sdp"
         android:layout_marginTop="8dp"
+        android:textColor="@color/white"
         android:textSize="26sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/gl_horizontal_0.4" />
@@ -73,14 +75,17 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_15sdp"
         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  "
+        android:textColor="@color/white"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/itemName" />
+
     <TextView
         android:id="@+id/tv_size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:textSize="23sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/gl_vertical_0.05"
@@ -91,6 +96,7 @@
         android:id="@+id/imgSmallSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/background_secondary"
         android:text="Small"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -103,6 +109,7 @@
         android:id="@+id/imgMediumSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/background_secondary"
         android:text="Medium"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -115,6 +122,7 @@
         android:id="@+id/imgLargeSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/background_secondary"
         android:text="Large"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -141,6 +149,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/zero"
+        android:textColor="@color/white"
         android:textSize="@dimen/_20sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/removeButton"
@@ -167,6 +176,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Price in EGP"
+        android:textColor="@color/white"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/gl_vertical_0.05"
@@ -178,6 +188,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
+        android:textColor="@color/white"
         android:textSize="25sp"
         app:layout_constraintStart_toEndOf="@id/gl_vertical_0.05"
         app:layout_constraintTop_toBottomOf="@id/priceTitle" />
@@ -186,7 +197,8 @@
         android:id="@+id/addToCartButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/primaryDark"
+
+        android:backgroundTint="@color/background_secondary"
         android:text="Add to Cart"
         android:textAllCaps="false"
         android:textColor="@color/white"

@@ -1,4 +1,4 @@
-package com.banquemisr.coffeeapp_banquemisr.common
+package com.banquemisr.coffeeapp_banquemisr.data.remote
 
 import com.banquemisr.coffeeapp_banquemisr.domain.model.Coffee
 
@@ -15,6 +15,7 @@ object Constants {
     const val KEY_MENU_NAME = "menuName"
     const val KEY_MENU_PRICE = "menuPrice"
     const val TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmYWR5IiwiZXhwIjoxNjYzNDU5MjAwLCJpYXQiOjE2NjMxNzc4MTQsImF1dGhvcml0aWVzIjpbImN1c3RvbWVyIl19.qEitW3XOk6LrPN0xT8pmM4IcmgaI6I0Bsjs-OIVb80c"
+    const val KEY_IMAGE_URL = "imageURL"
     var loginFlag = false
     val coffees: ArrayList<Coffee> = ArrayList()
 }

@@ -6,8 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import com.banquemisr.coffeeapp_banquemisr.data.remote.ApiClient
 import com.banquemisr.coffeeapp_banquemisr.data.remote.ApiService
 import com.banquemisr.coffeeapp_banquemisr.data.remote.dto.SignInDto
-import com.banquemisr.coffeeapp_banquemisr.common.Constants.loginFlag
-import com.banquemisr.coffeeapp_banquemisr.domain.model.User
+import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants.loginFlag
 import com.banquemisr.coffeeapp_banquemisr.domain.model.UserLogIn
 
 
