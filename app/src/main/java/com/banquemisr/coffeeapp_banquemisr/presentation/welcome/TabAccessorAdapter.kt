@@ -11,13 +11,12 @@ class TabAccessorAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
         return when (position) {
             0 -> WelcomeFragmentFirst()
             1 -> WelcomeFragmentSecond()
-            2 -> WelcomeFragmentThird()
             else -> WelcomeFragmentFirst()
         }
     }
 
     override fun getCount(): Int {
-        return 3
+        return 2
     }
 
 

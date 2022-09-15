@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/home">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_home"
+                    android:icon="@drawable/ic_home"
+                    android:title="@string/home" />
+                <item
+                    android:id="@+id/menu_cart"
+                    android:icon="@drawable/ic_profile"
+                    android:title="@string/cart" />
+                <item
+                    android:id="@+id/menu_profile"
+                    android:icon="@drawable/ic_profile"
+                    android:title="@string/profile" />
+
+
+            </group>
+        </menu>
+    </item>
+
+
+    <item
+        android:id="@+id/menu_signOut"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/logout" />
+
+
+</menu>

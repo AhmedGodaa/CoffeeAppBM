@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.banquemisr.coffeeapp_banquemisr.R
+import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants
 
 fun Activity.getAhmedTheme() {
     val preferencesManager =

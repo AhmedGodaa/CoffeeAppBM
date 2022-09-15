@@ -21,7 +21,7 @@ class CartAdapter(private val data: List<CoffeeOrder>) :
 
     override fun onBindViewHolder(holder: CoffeeOrderViewHolder, position: Int) {
 
-        holder.setCoffeeOrderData(data[position], position)
+        holder.setCoffeeOrderData(data[position])
     }
 
     override fun getItemCount(): Int {
@@ -32,8 +32,12 @@ class CartAdapter(private val data: List<CoffeeOrder>) :
         RecyclerView.ViewHolder(
             binding.root
         ) {
-        fun setCoffeeOrderData(model: CoffeeOrder?, position: Int) {
-            binding
+        fun setCoffeeOrderData(model: CoffeeOrder?) {
+            binding.tvTitle.text = "Name: " + model?.name
+            binding.tvCount.text = "Count: " + model?.count
+            binding.tvTotalPrice.text = "Total: : " + model?.totalPrice
+//            binding.tvSize.text = "Size: " + model?.size
+            binding.imgItem.setImageResource(model!!.icon)
 
         }
     }

@@ -7,6 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="background_primary">#201520</color>
+    <color name="background_secondary">#433843</color>
+
 
     <!-- Component -->
     <color name="yellow">#FFCC0A</color>
@@ -15,7 +18,6 @@
     <color name="blue">#B98068</color>
     <color name="primary">#F8E8D4</color>
     <color name="primaryDark">#B98068</color>
-
 
 
     <!--    Background    -->
@@ -32,5 +34,6 @@
     <color name="textPrimaryLight">#0F0A39</color>
     <color name="textPrimaryDark">#FFFFFF</color>
     <color name="textSecondary">#7B7890</color>
+    <color name="black_300">#333333</color>
 
 </resources>

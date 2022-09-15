@@ -5,11 +5,11 @@ import android.os.Bundle
 import android.util.Patterns
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.banquemisr.coffeeapp_banquemisr.common.Constants
+import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants
 import com.banquemisr.coffeeapp_banquemisr.common.PreferencesManager
 import com.banquemisr.coffeeapp_banquemisr.common.showToast
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivitySignInBinding
-import com.banquemisr.coffeeapp_banquemisr.domain.model.User
+import com.banquemisr.coffeeapp_banquemisr.domain.model.UserLogIn
 import com.banquemisr.coffeeapp_banquemisr.presentation.main.MainActivity
 
 class SignInActivity : AppCompatActivity() {
@@ -31,12 +31,9 @@ class SignInActivity : AppCompatActivity() {
     private fun setListeners() {
 
         binding.btnSignIn.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-//            if (isValidSignInDetails()) {
-//                signIn()
-//            }
-            startActivity(intent)
-            finish()
+            if (isValidSignInDetails()) {
+                signIn()
+            }
         }
 
     }
@@ -60,14 +57,19 @@ class SignInActivity : AppCompatActivity() {
 
     private fun signIn() {
         val password = binding.inputPassword.text.toString()
-        val username = binding.inputEmail.text.toString()
-        val user = User(username = username, password = password)
-        signInViewModel.getLoginResponseLiveData(user).observe(this) { signInResponse ->
-            preferencesManager.putString(Constants.KEY_USERNAME, signInResponse.username)
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
+        val email = binding.inputEmail.text.toString()
+        val user = UserLogIn(email = email, password = password)
+
+        signInViewModel.getLoginResponseLiveData(user).observe(this) {
+            if (Constants.loginFlag) {
+                preferencesManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true)
+                val intent = Intent(this, MainActivity::class.java)
+                preferencesManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+            }
         }
+
     }
 
 

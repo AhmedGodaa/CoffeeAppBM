@@ -4,27 +4,28 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import com.banquemisr.coffeeapp_banquemisr.common.Constants
+import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivityOrderBinding
 import com.banquemisr.coffeeapp_banquemisr.domain.model.CoffeeOrder
 import com.banquemisr.coffeeapp_banquemisr.presentation.cart.CartViewModel
 import com.banquemisr.coffeeapp_banquemisr.presentation.cart.CartViewModelProvider
-import com.banquemisr.data.db.CartDB
-import com.banquemisr.data.db.CartRepo
+import com.banquemisr.coffeeapp_banquemisr.data.db.CartDB
+import com.banquemisr.coffeeapp_banquemisr.data.db.CartRepo
+import com.bumptech.glide.Glide
 import kotlinx.coroutines.launch
 
 class OrderActivity : AppCompatActivity() {
 
     private var count: Int = 1
-    private var sizeCurrentCoefficient: Float = 1.0f
-    private var sizeSmallCoefficient: Float = 1.0f
-    private var sizeMediumCoefficient: Float = 2.0f
-    private var sizeLargeCoefficient: Float = 3.0f
+    private var sizeCurrentCoefficient: Int = 1
+    private var sizeSmallCoefficient: Int = 1
+    private var sizeMediumCoefficient: Int = 2
+    private var sizeLargeCoefficient: Int = 3
     private var isSmall: Boolean = true
     private var isMedium: Boolean = false
     private var isLarge: Boolean = false
-    private var itemPrice: Float = 10.0f
-    private var totalPrice: Float = 10.0f
+    private var itemPrice: Int = 10
+    private var totalPrice: Int = 10
     private lateinit var viewModel: CartViewModel
     private var coffeeName: String = ""
 
@@ -40,9 +41,21 @@ class OrderActivity : AppCompatActivity() {
 //        end
 
         getOrderData()
-        binding.itemImage.setImageResource(intent.getIntExtra(Constants.KEY_MENU_ICON, 0))
         binding.amountText.text = count.toString()
         binding.totalPriceText.text = itemPrice.toString()
+        val imageURL: String = intent.getStringExtra(Constants.KEY_IMAGE_URL).toString()
+        if (imageURL.isEmpty()) {
+            Glide.with(this).load(imageURL).into(binding.itemImage)
+
+        } else {
+            binding.itemImage.setImageResource(intent.getIntExtra(Constants.KEY_MENU_ICON, 0))
+
+        }
+
+
+
+
+
 
 
         setListeners()
@@ -51,7 +64,7 @@ class OrderActivity : AppCompatActivity() {
     }
 
     private fun getOrderData() {
-        itemPrice = intent.getFloatExtra(Constants.KEY_MENU_PRICE, 0.0f)
+        itemPrice = intent.getIntExtra(Constants.KEY_MENU_PRICE, 0)
         totalPrice = itemPrice //initially the total price is the item's price
         coffeeName = intent.getStringExtra(Constants.KEY_MENU_NAME).toString()
         binding.itemName.text = coffeeName
@@ -95,8 +108,38 @@ class OrderActivity : AppCompatActivity() {
             binding.imgLargeSize.alpha = 1.0f
             binding.imgSmallSize.alpha = 0.3f
             binding.imgMediumSize.alpha = 0.3f
+
+
             largeCup()
         }
+//        //no Sugar
+//        binding.noSugar.setOnClickListener {
+//            binding.noSugar.alpha = 1.0f
+//            binding.oneSugar.alpha = 0.3f
+//            binding.twoSugar.alpha = 0.3f
+//            binding.threeSugar.alpha = 0.3f
+//
+//            selectedSugar = 0
+//        }
+//        //select one sugar
+//        binding.oneSugar.setOnClickListener {
+//            binding.noSugar.alpha = 0.3f
+//            binding.oneSugar.alpha = 1.0f
+//            binding.twoSugar.alpha = 0.3f
+//            binding.threeSugar.alpha = 0.3f
+//
+//            selectedSugar = 0
+//        }
+
+//        // Select two sugar
+//        binding.twoSugar.setOnClickListener {
+//            binding.noSugar.alpha = 0.3f
+//            binding.oneSugar.alpha = 0.3f
+//            binding.twoSugar.alpha = 1.0f
+//            binding.threeSugar.alpha = 0.3f
+//
+//            selectedSugar = 0
+//        }
 
         binding.addToCartButton.setOnClickListener {
             var size = ""
@@ -109,20 +152,33 @@ class OrderActivity : AppCompatActivity() {
                 size = "small"
             }
             val coffeeOrder = CoffeeOrder(
-                name = coffeeName,
+                name = intent.getStringExtra(Constants.KEY_MENU_NAME),
                 count = count,
                 size = size,
                 sugar = "zero",
-                totalPrice = totalPrice
+                totalPrice = totalPrice,
+                icon = intent.getIntExtra(Constants.KEY_MENU_ICON, 0)
             )
             lifecycleScope.launch {
                 viewModel.insertOrder(coffeeOrder)
 
             }
+            finish()
         }
 
 
+//        // Select three sugar
+//        binding.threeSugar.setOnClickListener {
+//            binding.noSugar.alpha = 0.3f
+//            binding.oneSugar.alpha = 0.3f
+//            binding.twoSugar.alpha = 0.3f
+//            binding.threeSugar.alpha = 1.0f
+//            selectedSugar = 0
+//        }
+//
+
     }
+
 
     private fun addCup() {
         count++
@@ -183,7 +239,6 @@ class OrderActivity : AppCompatActivity() {
         }
         binding.totalPriceText.text = totalPrice.toString()
     }
-
 
 
 }

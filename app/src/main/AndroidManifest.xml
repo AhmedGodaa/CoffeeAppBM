@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.banquemisr.coffeeapp_banquemisr">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,11 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Light"
         tools:targetApi="31">
-        <activity
-            android:name=".CartActivity"
-            android:exported="false"
-            android:label="@string/title_activity_cart"
-            android:theme="@style/Theme.Light.NoActionBar" />
+
         <activity
             android:name=".presentation.order.OrderActivity"
             android:exported="true" />
@@ -32,15 +29,20 @@
             android:exported="false" />
         <activity
             android:name=".presentation.splash.SplashActivity"
-            android:exported="true"></activity>
-        <activity
-            android:name=".presentation.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
+        </activity>
+        <activity
+            android:name=".presentation.main.MainActivity"
+            android:exported="true">
+
+
         </activity>
     </application>
 

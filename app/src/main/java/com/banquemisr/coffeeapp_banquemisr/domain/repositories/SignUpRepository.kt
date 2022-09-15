@@ -1,18 +1,18 @@
 package com.banquemisr.coffeeapp_banquemisr.domain.repositories
 
 import android.util.Log
-import com.banquemisr.data.remote.ApiService
+import com.banquemisr.coffeeapp_banquemisr.data.remote.ApiService
 import androidx.lifecycle.LiveData
-import com.banquemisr.data.remote.dto.SignUpDto
+import com.banquemisr.coffeeapp_banquemisr.data.remote.dto.SignUpDto
 import androidx.lifecycle.MutableLiveData
 import com.banquemisr.coffeeapp_banquemisr.domain.model.User
-import com.banquemisr.data.remote.ApiClient
+import com.banquemisr.coffeeapp_banquemisr.data.remote.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class SignUpRepository {
-    private val apiService: ApiService = ApiClient.retrofit.create(ApiService::class.java)
+    private val apiService: ApiService = ApiClient.retrofit!!.create(ApiService::class.java)
     fun signUp(user: User?): LiveData<SignUpDto?> {
         val mutableLiveData = MutableLiveData<SignUpDto?>()
         apiService.signUp(user)!!.enqueue(object : Callback<SignUpDto?> {

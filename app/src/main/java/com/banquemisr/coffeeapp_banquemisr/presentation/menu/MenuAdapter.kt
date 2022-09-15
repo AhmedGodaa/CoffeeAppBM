@@ -1,17 +1,18 @@
 package com.banquemisr.coffeeapp_banquemisr.presentation.menu
 
-import androidx.recyclerview.widget.RecyclerView
-import com.banquemisr.coffeeapp_banquemisr.presentation.menu.MenuAdapter.MenuViewHolder
-import android.view.ViewGroup
+import android.content.Context
 import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.banquemisr.coffeeapp_banquemisr.databinding.ItemContainerMenuBinding
 import com.banquemisr.coffeeapp_banquemisr.domain.model.Coffee
-import com.banquemisr.coffeeapp_banquemisr.domain.model.Menu
-import java.util.ArrayList
+import com.banquemisr.coffeeapp_banquemisr.presentation.menu.MenuAdapter.MenuViewHolder
+import com.bumptech.glide.Glide
 
 class MenuAdapter(
     private val data: ArrayList<Coffee>,
-    private val modelListener: MenuListener
+    private val modelListener: MenuListener,
+    private val context: Context
 ) : RecyclerView.Adapter<MenuViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {
         val binding = ItemContainerMenuBinding.inflate(
@@ -23,7 +24,7 @@ class MenuAdapter(
     }
 
     override fun onBindViewHolder(holder: MenuViewHolder, position: Int) {
-        holder.setMenuData(data[position], position)
+        holder.setMenuData(data[position])
     }
 
     override fun getItemCount(): Int {
@@ -34,12 +35,19 @@ class MenuAdapter(
         RecyclerView.ViewHolder(
             binding.root
         ) {
-        fun setMenuData(model: Coffee, position: Int) {
+        fun setMenuData(model: Coffee) {
             binding.root.setOnClickListener {
                 modelListener.onClick(model)
             }
             binding.imgIcon.setImageResource(model.icon)
             binding.tvTitle.text = model.name
+            binding.tvPrice.text =  model.unitPrice.toString()
+
+
+            if(!model.imageUrl.isNullOrEmpty())
+            {
+                Glide.with(context).load(model.imageUrl).into(binding.imgIcon)
+            }
         }
     }
 }

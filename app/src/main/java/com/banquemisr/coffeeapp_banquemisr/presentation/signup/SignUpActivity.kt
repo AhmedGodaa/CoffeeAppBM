@@ -8,6 +8,7 @@ import com.banquemisr.coffeeapp_banquemisr.common.openActivity
 import com.banquemisr.coffeeapp_banquemisr.common.showToast
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivitySignUpBinding
 import com.banquemisr.coffeeapp_banquemisr.domain.model.User
+import com.banquemisr.coffeeapp_banquemisr.domain.repositories.SignUpRepository
 import com.banquemisr.coffeeapp_banquemisr.presentation.signin.SignInActivity
 
 class SignUpActivity : AppCompatActivity() {
@@ -30,8 +31,12 @@ class SignUpActivity : AppCompatActivity() {
         }
         binding.btnSignUp.setOnClickListener {
             if (isValidSignUpDetails()) {
+                showToast("Sign up successful")
                 signUp()
+                openActivity(SignInActivity::class.java)
+                finish()
             }
+
         }
     }
 
@@ -69,5 +74,17 @@ class SignUpActivity : AppCompatActivity() {
                 )
         )
 
+        //=======================MOSTAFA============================
+        val retroFitSignUp = SignUpRepository()
+
+        retroFitSignUp.signUp(User(
+            username =
+            binding.inputUsername.text.toString(),
+            email =
+            binding.inputEmail.editableText.toString(),
+            password =
+            binding.inputPassword.editableText.toString(),
+            ))
+        //===================================================
     }
 }

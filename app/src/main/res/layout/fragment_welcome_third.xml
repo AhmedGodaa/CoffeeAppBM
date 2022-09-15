@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".presentation.welcome.WelcomeFragmentThird">
+    tools:context=".presentation.welcome.WelcomeFragmentSecond">
 
     <TextView
         android:layout_width="match_parent"

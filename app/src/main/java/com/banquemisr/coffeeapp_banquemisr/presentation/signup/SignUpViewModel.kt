@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.banquemisr.coffeeapp_banquemisr.domain.repositories.SignUpRepository
 import androidx.lifecycle.LiveData
 import com.banquemisr.coffeeapp_banquemisr.domain.model.User
-import com.banquemisr.data.remote.dto.SignUpDto
+import com.banquemisr.coffeeapp_banquemisr.data.remote.dto.SignUpDto
 
 class SignUpViewModel : ViewModel() {
     private val signUpRepository: SignUpRepository = SignUpRepository()
