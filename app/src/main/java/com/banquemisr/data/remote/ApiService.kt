@@ -6,6 +6,7 @@ import com.banquemisr.coffeeapp_banquemisr.domain.model.UserLogIn
 import com.banquemisr.coffeeapp_banquemisr.domain.model.UserOrder
 import com.banquemisr.data.remote.dto.SignInDto
 import com.banquemisr.data.remote.dto.SignUpDto
+import com.example.example.Product
 import com.example.example.ProductJsonObject
 import retrofit2.Call
 import retrofit2.http.*
@@ -20,7 +21,7 @@ interface ApiService {
     @POST("/order")
     fun order(@Body userOrder: UserOrder)
 
-    @GET("cartproduct")
-    fun getProducts(): Call<ArrayList<ProductJsonObject>>
+    @GET("product")
+    fun getProducts(): Call<ArrayList<Product>>
 
 }
