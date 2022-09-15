@@ -75,20 +75,20 @@ class OrderActivity : AppCompatActivity() {
     private fun setListeners() {
         //add one button
         binding.imgLittle.setOnClickListener {
-            binding.imgSmallSize.alpha = 1.0f
-            binding.imgMediumSize.alpha = 0.3f
-            binding.imgLargeSize.alpha = 0.3f
+            binding.imgLittle.alpha = 1.0f
+            binding.imgMedium.alpha = 0.3f
+            binding.btn3.alpha = 0.3f
         }
         binding.imgMedium.setOnClickListener {
-            binding.imgMediumSize.alpha = 1.0f
-            binding.imgSmallSize.alpha = 0.3f
-            binding.imgLargeSize.alpha = 0.3f
+            binding.imgMedium.alpha = 1.0f
+            binding.imgLittle.alpha = 0.3f
+            binding.btn3.alpha = 0.3f
 
         }
         binding.btn3.setOnClickListener {
-            binding.imgMediumSize.alpha = 0.3f
-            binding.imgSmallSize.alpha = 0.3f
-            binding.imgLargeSize.alpha = 1.0f
+            binding.btn3.alpha = 1.0f
+            binding.imgMedium.alpha = 0.3f
+            binding.imgLittle.alpha = 0.3f
 
         }
         binding.addButton.setOnClickListener {
