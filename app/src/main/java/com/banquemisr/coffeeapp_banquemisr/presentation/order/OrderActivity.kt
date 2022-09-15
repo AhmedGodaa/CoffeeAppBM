@@ -74,6 +74,23 @@ class OrderActivity : AppCompatActivity() {
 
     private fun setListeners() {
         //add one button
+        binding.imgLittle.setOnClickListener {
+            binding.imgSmallSize.alpha = 1.0f
+            binding.imgMediumSize.alpha = 0.3f
+            binding.imgLargeSize.alpha = 0.3f
+        }
+        binding.imgMedium.setOnClickListener {
+            binding.imgMediumSize.alpha = 1.0f
+            binding.imgSmallSize.alpha = 0.3f
+            binding.imgLargeSize.alpha = 0.3f
+
+        }
+        binding.btn3.setOnClickListener {
+            binding.imgMediumSize.alpha = 0.3f
+            binding.imgSmallSize.alpha = 0.3f
+            binding.imgLargeSize.alpha = 1.0f
+
+        }
         binding.addButton.setOnClickListener {
             addCup()
         }

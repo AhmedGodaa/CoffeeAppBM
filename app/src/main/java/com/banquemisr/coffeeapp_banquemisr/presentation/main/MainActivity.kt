@@ -95,6 +95,7 @@ class MainActivity : AppCompatActivity(), MenuListener,
         }
         if (item.itemId == R.id.menu_signOut) {
             preferenceManager.clear()
+            Constants.TOKEN = ""
             preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, false)
             val intent = Intent(this, SignInActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
