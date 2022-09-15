@@ -85,6 +85,9 @@ dependencies {
 
     implementation "androidx.activity:activity-ktx:1.5.1"
 
+    //round image view
+    implementation  'de.hdodenhof:circleimageview:3.1.0'
+
     //  Live Animation
     implementation 'com.airbnb.android:lottie:4.1.0'
 
