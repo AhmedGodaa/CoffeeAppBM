@@ -19,4 +19,6 @@ data class Coffee(
     val productStockQuantity: Int = 0,
     val productSugarSpoon: Int = 0
 
+    val imageUrl: String? = null,
+    val id: Int? = -1
 )
