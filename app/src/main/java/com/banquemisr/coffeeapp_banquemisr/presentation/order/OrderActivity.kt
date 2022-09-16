@@ -1,20 +1,21 @@
 package com.banquemisr.coffeeapp_banquemisr.presentation.order
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.ViewModelProvider
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivityOrderBinding
 import com.banquemisr.coffeeapp_banquemisr.domain.model.CoffeeOrder
 import com.banquemisr.coffeeapp_banquemisr.presentation.cart.CartViewModel
-import com.banquemisr.coffeeapp_banquemisr.presentation.cart.CartViewModelProvider
-import com.banquemisr.coffeeapp_banquemisr.data.db.CartDB
-import com.banquemisr.coffeeapp_banquemisr.data.db.CartRepo
 import com.bumptech.glide.Glide
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-
+@AndroidEntryPoint
 class OrderActivity : AppCompatActivity() {
+
+
+    private val viewModel: CartViewModel by viewModels()
 
     private var count: Int = 1
     private var sizeCurrentCoefficient: Int = 1
@@ -26,7 +27,6 @@ class OrderActivity : AppCompatActivity() {
     private var isLarge: Boolean = false
     private var itemPrice: Int = 10
     private var totalPrice: Int = 10
-    private lateinit var viewModel: CartViewModel
     private var coffeeName: String = ""
 
     lateinit var binding: ActivityOrderBinding
@@ -34,11 +34,6 @@ class OrderActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityOrderBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        ViewModel
-        val repo = CartRepo(CartDB.getDatabase(this))
-        val cartViewModelProvider = CartViewModelProvider(repo)
-        viewModel = ViewModelProvider(this, cartViewModelProvider)[CartViewModel::class.java]
-//        end
 
         getOrderData()
         binding.amountText.text = count.toString()

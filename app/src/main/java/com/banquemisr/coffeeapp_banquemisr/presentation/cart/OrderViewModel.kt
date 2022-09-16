@@ -9,17 +9,12 @@ import com.banquemisr.coffeeapp_banquemisr.domain.model.UserOrder
 import com.banquemisr.coffeeapp_banquemisr.domain.repositories.OrderRepository
 
 
-class OrderViewModel(private val db: CartDB) : ViewModel() {
-    private val orderRepository: OrderRepository = OrderRepository()
-    private val cartRepo: CartRepo = CartRepo(db)
-
-
+class OrderViewModel(private val orderRepository: OrderRepository) : ViewModel() {
 
 //    fun orderWithCart(userOrder: UserOrder): LiveData<OrderDto> {
 //        return orderRepository.orderWithCart(userOrder)
 //
 //    }
-
 
 
 }

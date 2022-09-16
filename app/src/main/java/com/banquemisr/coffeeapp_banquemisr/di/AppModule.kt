@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.banquemisr.coffeeapp_banquemisr.data.db.CartDB
 import com.banquemisr.coffeeapp_banquemisr.data.db.CartDao
+import com.banquemisr.coffeeapp_banquemisr.data.db.CartRepo
 import com.banquemisr.coffeeapp_banquemisr.data.remote.ApiClient
 import com.banquemisr.coffeeapp_banquemisr.data.remote.ApiService
 import com.banquemisr.coffeeapp_banquemisr.domain.repositories.SignInRepository
@@ -27,15 +28,14 @@ object AppModule {
 
     @Provides
     @Singleton
+    fun provideCartRepo(dao: CartDao, apiService: ApiService) = CartRepo(dao, apiService)
+
+
+    @Provides
+    @Singleton
     fun provideApiService(): ApiService {
         return ApiClient.retrofit!!.create(ApiService::class.java)
     }
-
-
-//    fun provideDB(): CartDB {
-//        return
-//
-//    }
 
 
     @Singleton
@@ -44,6 +44,7 @@ object AppModule {
         @ApplicationContext app: Context
     ) = Room.databaseBuilder(app, CartDB::class.java, "cart_db").build()
 
+    @Singleton
+    @Provides
     fun provideDao(db: CartDB) = db.getCartDao()
-
 }

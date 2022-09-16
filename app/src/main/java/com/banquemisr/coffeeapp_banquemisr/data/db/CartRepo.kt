@@ -9,25 +9,25 @@ import com.banquemisr.coffeeapp_banquemisr.data.remote.ApiService
 import com.banquemisr.coffeeapp_banquemisr.data.remote.OrderDto
 import com.banquemisr.coffeeapp_banquemisr.domain.model.CoffeeOrder
 import com.banquemisr.coffeeapp_banquemisr.domain.model.UserOrder
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import javax.inject.Inject
 
 
-class CartRepo(private val db: CartDB) {
-    private val apiService: ApiService = ApiClient.retrofit!!.create(ApiService::class.java)
+class CartRepo @Inject constructor(
+    private val dao: CartDao,
+    private val apiService: ApiService
+) {
 
 
-    suspend fun getAllOrders() = db.getCartDao().getAllOrders()
+    suspend fun getAllOrders() = dao.getAllOrders()
 
     @WorkerThread
     suspend fun insertOrder(order: CoffeeOrder) {
-        db.getCartDao().insertOrder(order)
+        dao.insertOrder(order)
 
     }
 
     suspend fun deleteAll() {
-        db.getCartDao().deleteAllOrders()
+        dao.deleteAllOrders()
 
     }
 
