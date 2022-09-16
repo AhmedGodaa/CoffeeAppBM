@@ -13,12 +13,16 @@ import com.banquemisr.coffeeapp_banquemisr.domain.model.UserLogIn
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
-class SignInRepository {
-    private val apiService: ApiService = ApiClient.retrofit!!.create(ApiService::class.java)
+class SignInRepository @Inject constructor(private val apiService: ApiService) {
+
+
+
     fun getSignInResponseData(user: UserLogIn?): LiveData<SignInDto> {
+
         val mutableLiveData: MutableLiveData<SignInDto> = MutableLiveData<SignInDto>()
-        apiService.signIn(user)?.enqueue(object : Callback<SignInDto?> {
+        apiService.signIn(user).enqueue(object : Callback<SignInDto?> {
             override fun onResponse(call: Call<SignInDto?>, response: Response<SignInDto?>) {
                 Log.d(TAG, "onResponse: Succeeded")
                 if (response.code() == 200) {
@@ -34,6 +38,7 @@ class SignInRepository {
         })
         return mutableLiveData
     }
+
 
     companion object {
         private val TAG = SignInRepository::class.java.simpleName

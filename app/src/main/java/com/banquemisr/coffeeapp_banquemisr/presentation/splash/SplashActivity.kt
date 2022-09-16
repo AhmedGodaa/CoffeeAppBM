@@ -10,6 +10,7 @@ import com.banquemisr.coffeeapp_banquemisr.common.openActivity
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivitySplashBinding
 import com.banquemisr.coffeeapp_banquemisr.presentation.main.MainActivity
 import com.banquemisr.coffeeapp_banquemisr.presentation.welcome.WelcomeActivity
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
 class SplashActivity : AppCompatActivity() {

@@ -15,10 +15,10 @@ class OrderViewModel(private val db: CartDB) : ViewModel() {
 
 
 
-    fun orderWithCart(userOrder: UserOrder): LiveData<OrderDto> {
-        return orderRepository.orderWithCart(userOrder)
-
-    }
+//    fun orderWithCart(userOrder: UserOrder): LiveData<OrderDto> {
+//        return orderRepository.orderWithCart(userOrder)
+//
+//    }
 
 
 

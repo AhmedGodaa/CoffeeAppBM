@@ -3,6 +3,7 @@ package com.banquemisr.coffeeapp_banquemisr.presentation.signin
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants
@@ -11,17 +12,18 @@ import com.banquemisr.coffeeapp_banquemisr.common.showToast
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivitySignInBinding
 import com.banquemisr.coffeeapp_banquemisr.domain.model.UserLogIn
 import com.banquemisr.coffeeapp_banquemisr.presentation.main.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SignInActivity : AppCompatActivity() {
     lateinit var preferencesManager: PreferencesManager
-    lateinit var signInViewModel: SignInViewModel
+    private val signInViewModel :SignInViewModel by viewModels()
     lateinit var binding: ActivitySignInBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        signInViewModel = ViewModelProvider(this)[SignInViewModel::class.java]
         preferencesManager = PreferencesManager(this)
         setListeners()
 
@@ -61,8 +63,8 @@ class SignInActivity : AppCompatActivity() {
         val user = UserLogIn(email = email, password = password)
 
         signInViewModel.getLoginResponseLiveData(user).observe(this) {
-            preferencesManager.putString(Constants.KEY_TOKEN, it.token.toString())
-            Constants.TOKEN = it.token.toString()
+//            preferencesManager.putString(Constants.KEY_TOKEN, it.token.toString())
+//            Constants.TOKEN = it.token.toString()
             if (Constants.loginFlag) {
                 preferencesManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true)
                 val intent = Intent(this, MainActivity::class.java)

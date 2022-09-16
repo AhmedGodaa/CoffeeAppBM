@@ -7,22 +7,23 @@ import com.banquemisr.coffeeapp_banquemisr.domain.model.UserLogIn
 import com.banquemisr.coffeeapp_banquemisr.domain.model.UserOrder
 import com.example.example.Product
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface ApiService {
     @POST("auth/login")
-    fun signIn(@Body user: UserLogIn?): Call<SignInDto?>?
+     fun signIn(@Body user: UserLogIn?): Call<SignInDto?>
 
     @POST("auth/register")
-    fun signUp(@Body user: User?): Call<SignUpDto?>?
+    suspend fun signUp(@Body user: User?): Response<SignUpDto?>?
 
 
-    @POST("/")
-    fun userOrder(@Body userOrder: UserOrder): Call<OrderDto>
+    @POST("order")
+    suspend fun userOrder(@Body userOrder: UserOrder): Response<OrderDto>
 
     @GET("product")
-    fun getProducts(): Call<ArrayList<Product>>
+    suspend fun getProducts(): Response<ArrayList<Product>>
 
 }

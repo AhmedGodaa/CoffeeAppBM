@@ -15,16 +15,16 @@ class SignUpRepository {
     private val apiService: ApiService = ApiClient.retrofit!!.create(ApiService::class.java)
     fun signUp(user: User?): LiveData<SignUpDto?> {
         val mutableLiveData = MutableLiveData<SignUpDto?>()
-        apiService.signUp(user)!!.enqueue(object : Callback<SignUpDto?> {
-            override fun onResponse(call: Call<SignUpDto?>, response: Response<SignUpDto?>) {
-                Log.d(TAG, "onResponse: Registered Successfully")
-                mutableLiveData.value = response.body()
-            }
-
-            override fun onFailure(call: Call<SignUpDto?>, t: Throwable) {
-                Log.d(TAG, t.message!!)
-            }
-        })
+//        apiService.signUp(user)!!.enqueue(object : Callback<SignUpDto?> {
+//            override fun onResponse(call: Call<SignUpDto?>, response: Response<SignUpDto?>) {
+//                Log.d(TAG, "onResponse: Registered Successfully")
+//                mutableLiveData.value = response.body()
+//            }
+//
+//            override fun onFailure(call: Call<SignUpDto?>, t: Throwable) {
+//                Log.d(TAG, t.message!!)
+//            }
+//        })
         return mutableLiveData
     }
 

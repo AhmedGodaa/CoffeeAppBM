@@ -11,7 +11,9 @@ import com.banquemisr.coffeeapp_banquemisr.common.PreferencesManager
 import com.banquemisr.coffeeapp_banquemisr.common.openActivity
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivityWelcomeBinding
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class WelcomeActivity : AppCompatActivity() {
     lateinit var binding: ActivityWelcomeBinding
     private var preferencesManager: PreferencesManager? = null

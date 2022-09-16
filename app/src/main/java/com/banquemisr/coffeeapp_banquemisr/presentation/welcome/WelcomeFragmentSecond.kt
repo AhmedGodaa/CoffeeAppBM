@@ -9,7 +9,9 @@ import com.banquemisr.coffeeapp_banquemisr.common.openActivity
 import com.banquemisr.coffeeapp_banquemisr.databinding.FragmentWelcomeThirdBinding
 import com.banquemisr.coffeeapp_banquemisr.presentation.signin.SignInActivity
 import com.banquemisr.coffeeapp_banquemisr.presentation.signup.SignUpActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class WelcomeFragmentSecond : Fragment() {
     lateinit var binding: FragmentWelcomeThirdBinding
 

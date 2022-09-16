@@ -20,8 +20,9 @@ import com.banquemisr.coffeeapp_banquemisr.presentation.profile.FragmentProfile
 import com.banquemisr.coffeeapp_banquemisr.presentation.signin.SignInActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity(), MenuListener,
     NavigationView.OnNavigationItemSelectedListener {
     lateinit var binding: ActivityMainBinding
@@ -32,9 +33,7 @@ class MainActivity : AppCompatActivity(), MenuListener,
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         preferenceManager = PreferencesManager(applicationContext)
-        changeMode()
         showToast(preferenceManager.getString(Constants.KEY_TOKEN).toString())
-
 
 
         binding.floatingActionButton.setOnClickListener {
@@ -136,7 +135,7 @@ class MainActivity : AppCompatActivity(), MenuListener,
     override fun onClick(model: Coffee) {
 
 
-        val intent = Intent(this, OrderActivity::class.java);
+        val intent = Intent(this, OrderActivity::class.java)
         intent.putExtra(Constants.KEY_MENU_ICON, model.icon)
         intent.putExtra(Constants.KEY_MENU_NAME, model.name)
         intent.putExtra(Constants.KEY_MENU_PRICE, model.unitPrice)

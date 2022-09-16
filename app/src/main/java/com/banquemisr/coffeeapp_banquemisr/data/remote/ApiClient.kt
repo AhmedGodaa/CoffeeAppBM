@@ -1,5 +1,7 @@
 package com.banquemisr.coffeeapp_banquemisr.data.remote
 
+import com.banquemisr.coffeeapp_banquemisr.domain.repositories.OAuthInterceptor
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -16,4 +18,22 @@ object ApiClient {
         }
         private set
     private const val BASE_URL = "https://cafe-app-project.herokuapp.com/api/"
+
+
+    val retrofitWithClient: Retrofit
+        get() {
+            val client = OkHttpClient.Builder()
+                .addInterceptor(
+                    OAuthInterceptor(
+                        "Bearer",
+                        Constants.TOKEN
+                    )
+                )
+                .build()
+            return Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(client)
+                .build()
+        }
 }
