@@ -1,15 +1,31 @@
 package com.banquemisr.coffeeapp_banquemisr.presentation.signup
 
-import androidx.lifecycle.ViewModel
-import com.banquemisr.coffeeapp_banquemisr.domain.repositories.SignUpRepository
 import androidx.lifecycle.LiveData
-import com.banquemisr.coffeeapp_banquemisr.domain.model.User
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.banquemisr.coffeeapp_banquemisr.data.remote.dto.SignUpDto
+import com.banquemisr.coffeeapp_banquemisr.data.repo.SignUpRepository
+import com.banquemisr.coffeeapp_banquemisr.domain.model.User
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class SignUpViewModel : ViewModel() {
-    private val signUpRepository: SignUpRepository = SignUpRepository()
-    fun signUp(user: User?): LiveData<SignUpDto?> {
-        return signUpRepository.signUp(user)
+@HiltViewModel
+class SignUpViewModel @Inject constructor(private val signUpRepository: SignUpRepository) :
+    ViewModel() {
+
+    private var _mutableSignUpResponse = MutableLiveData<SignUpDto>()
+    val mutableSignInResponse: LiveData<SignUpDto> = _mutableSignUpResponse
+
+    fun signUp(user: User) = viewModelScope.launch {
+        val response = signUpRepository.signUp(user)
+        if (response.isSuccessful) {
+            _mutableSignUpResponse.value = response.body()
+
+        }
+
     }
+
 
 }

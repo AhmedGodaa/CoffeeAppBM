@@ -11,7 +11,7 @@ import com.banquemisr.coffeeapp_banquemisr.R
 import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants
 import com.banquemisr.coffeeapp_banquemisr.databinding.FragmentHomeBinding
 import com.banquemisr.coffeeapp_banquemisr.domain.model.Coffee
-import com.banquemisr.coffeeapp_banquemisr.domain.repositories.ProductRepository
+import com.banquemisr.coffeeapp_banquemisr.data.repo.ProductRepository
 import com.banquemisr.coffeeapp_banquemisr.presentation.menu.MenuAdapter
 import com.banquemisr.coffeeapp_banquemisr.presentation.menu.MenuListener
 import com.banquemisr.coffeeapp_banquemisr.presentation.order.OrderActivity

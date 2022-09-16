@@ -1,20 +1,8 @@
-package com.banquemisr.coffeeapp_banquemisr.domain.repositories
+package com.banquemisr.coffeeapp_banquemisr.data.repo
 
-import android.util.Log
-import com.banquemisr.coffeeapp_banquemisr.R
-import com.banquemisr.coffeeapp_banquemisr.data.remote.ApiClient
-import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants.loginFlag
-import com.banquemisr.coffeeapp_banquemisr.domain.model.Coffee
+import com.banquemisr.coffeeapp_banquemisr.domain.repositories.ProductRepo
 
-import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants.coffees
-import com.banquemisr.coffeeapp_banquemisr.data.remote.ApiService
-import com.example.example.Product
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-
-class ProductRepository {
-    private val apiService: ApiService = ApiClient.retrofitWithClient.create(ApiService::class.java)
+class ProductRepository : ProductRepo {
     fun getOnlineProducts() {
 
 
@@ -50,8 +38,5 @@ class ProductRepository {
 
     }
 
-    companion object {
-        private val TAG = ProductRepository::class.java.simpleName
-    }
 
 }

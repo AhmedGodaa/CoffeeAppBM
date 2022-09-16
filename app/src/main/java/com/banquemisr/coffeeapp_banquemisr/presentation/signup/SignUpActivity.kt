@@ -2,23 +2,22 @@ package com.banquemisr.coffeeapp_banquemisr.presentation.signup
 
 import android.os.Bundle
 import android.util.Patterns
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import com.banquemisr.coffeeapp_banquemisr.common.openActivity
 import com.banquemisr.coffeeapp_banquemisr.common.showToast
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivitySignUpBinding
 import com.banquemisr.coffeeapp_banquemisr.domain.model.User
-import com.banquemisr.coffeeapp_banquemisr.domain.repositories.SignUpRepository
 import com.banquemisr.coffeeapp_banquemisr.presentation.signin.SignInActivity
 
 class SignUpActivity : AppCompatActivity() {
     lateinit var binding: ActivitySignUpBinding
-    lateinit var viewModel: SignUpViewModel
+    private val viewModel: SignUpViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        viewModel = ViewModelProvider(this)[SignUpViewModel::class.java]
+
         setListeners()
 
     }
@@ -74,17 +73,6 @@ class SignUpActivity : AppCompatActivity() {
                 )
         )
 
-        //=======================MOSTAFA============================
-        val retroFitSignUp = SignUpRepository()
 
-        retroFitSignUp.signUp(User(
-            username =
-            binding.inputUsername.text.toString(),
-            email =
-            binding.inputEmail.editableText.toString(),
-            password =
-            binding.inputPassword.editableText.toString(),
-            ))
-        //===================================================
     }
 }

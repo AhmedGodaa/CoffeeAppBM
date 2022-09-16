@@ -29,7 +29,7 @@ class CartFragment : Fragment() {
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.btnOrder.setOnClickListener {
-//            viewModel.orderCart()
+          viewModel
             lifecycleScope.launch {
                 viewModel.deleteAll()
                 adapter.setData(emptyList())
@@ -39,5 +39,8 @@ class CartFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+    }
 
 }

@@ -1,4 +1,4 @@
-package com.banquemisr.coffeeapp_banquemisr.domain.repositories
+package com.banquemisr.coffeeapp_banquemisr.common
 
 import okhttp3.Interceptor
 

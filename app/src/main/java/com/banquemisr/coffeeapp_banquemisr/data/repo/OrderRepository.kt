@@ -1,21 +1,14 @@
-package com.banquemisr.coffeeapp_banquemisr.domain.repositories
+package com.banquemisr.coffeeapp_banquemisr.data.repo
 
-import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import com.banquemisr.coffeeapp_banquemisr.data.remote.ApiClient
 import com.banquemisr.coffeeapp_banquemisr.data.remote.ApiService
-import com.banquemisr.coffeeapp_banquemisr.data.remote.OrderDto
 import com.banquemisr.coffeeapp_banquemisr.domain.model.UserOrder
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.banquemisr.coffeeapp_banquemisr.domain.repositories.OrderRepo
 import javax.inject.Inject
 
-class OrderRepository {
-    private val apiService: ApiService = ApiClient.retrofit!!.create(ApiService::class.java)
+class OrderRepository : OrderRepo {
 
-//    fun orderWithCart(userOrder: UserOrder): LiveData<OrderDto> {
+
+    //    fun orderWithCart(userOrder: UserOrder): LiveData<OrderDto> {
 //
 //        val mutableLiveData = MutableLiveData<OrderDto>()
 //
@@ -30,9 +23,8 @@ class OrderRepository {
 ////        })
 //        return mutableLiveData
 //    }
+    override suspend fun orderWithCart(userOrder: UserOrder) {
 
-    companion object {
-        private val TAG = SignUpRepository::class.java.simpleName
     }
 
 }

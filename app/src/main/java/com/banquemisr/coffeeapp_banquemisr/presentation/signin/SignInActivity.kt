@@ -5,10 +5,9 @@ import android.os.Bundle
 import android.util.Patterns
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
-import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants
 import com.banquemisr.coffeeapp_banquemisr.common.PreferencesManager
 import com.banquemisr.coffeeapp_banquemisr.common.showToast
+import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivitySignInBinding
 import com.banquemisr.coffeeapp_banquemisr.domain.model.UserLogIn
 import com.banquemisr.coffeeapp_banquemisr.presentation.main.MainActivity
@@ -17,7 +16,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class SignInActivity : AppCompatActivity() {
     lateinit var preferencesManager: PreferencesManager
-    private val signInViewModel :SignInViewModel by viewModels()
+    private val viewModel: SignInViewModel by viewModels()
     lateinit var binding: ActivitySignInBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +30,6 @@ class SignInActivity : AppCompatActivity() {
 
 
     private fun setListeners() {
-
         binding.btnSignIn.setOnClickListener {
             if (isValidSignInDetails()) {
                 signIn()
@@ -61,18 +59,23 @@ class SignInActivity : AppCompatActivity() {
         val password = binding.inputPassword.text.toString()
         val email = binding.inputEmail.text.toString()
         val user = UserLogIn(email = email, password = password)
+        val signInDto = viewModel.signInResponse.value
+        viewModel.getLoginResponseLiveData(user)
 
-        signInViewModel.getLoginResponseLiveData(user).observe(this) {
-//            preferencesManager.putString(Constants.KEY_TOKEN, it.token.toString())
-//            Constants.TOKEN = it.token.toString()
-            if (Constants.loginFlag) {
-                preferencesManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true)
-                val intent = Intent(this, MainActivity::class.java)
-                preferencesManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true)
-                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                startActivity(intent)
-            }
+
+        preferencesManager.putString(
+            Constants.KEY_TOKEN, signInDto?.token
+                .toString()
+        )
+        Constants.TOKEN = signInDto?.token.toString()
+        if (Constants.loginFlag) {
+            preferencesManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true)
+            val intent = Intent(this, MainActivity::class.java)
+            preferencesManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
         }
+
 
     }
 

@@ -6,6 +6,7 @@ import com.banquemisr.coffeeapp_banquemisr.domain.model.User
 import com.banquemisr.coffeeapp_banquemisr.domain.model.UserLogIn
 import com.banquemisr.coffeeapp_banquemisr.domain.model.UserOrder
 import com.example.example.Product
+import kotlinx.coroutines.flow.Flow
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
@@ -14,10 +15,10 @@ import retrofit2.http.POST
 
 interface ApiService {
     @POST("auth/login")
-     fun signIn(@Body user: UserLogIn?): Call<SignInDto?>
+    fun signIn(@Body user: UserLogIn?): Response<SignInDto>
 
     @POST("auth/register")
-    suspend fun signUp(@Body user: User?): Response<SignUpDto?>?
+    suspend fun signUp(@Body user: User?): Response<SignUpDto>
 
 
     @POST("order")

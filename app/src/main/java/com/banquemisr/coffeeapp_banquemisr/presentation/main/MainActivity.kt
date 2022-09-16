@@ -21,18 +21,21 @@ import com.banquemisr.coffeeapp_banquemisr.presentation.signin.SignInActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(), MenuListener,
     NavigationView.OnNavigationItemSelectedListener {
     lateinit var binding: ActivityMainBinding
-    private lateinit var preferenceManager: PreferencesManager
+
+    @Inject
+    lateinit var preferenceManager: PreferencesManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        preferenceManager = PreferencesManager(applicationContext)
+
         showToast(preferenceManager.getString(Constants.KEY_TOKEN).toString())
 
 
