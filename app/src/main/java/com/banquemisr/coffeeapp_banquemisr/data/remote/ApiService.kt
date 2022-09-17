@@ -15,7 +15,7 @@ import retrofit2.http.POST
 
 interface ApiService {
     @POST("auth/login")
-    fun signIn(@Body user: UserLogIn?): Response<SignInDto>
+    suspend fun signIn(@Body user: UserLogIn?): Response<SignInDto>
 
     @POST("auth/register")
     suspend fun signUp(@Body user: User?): Response<SignUpDto>
@@ -25,6 +25,6 @@ interface ApiService {
     suspend fun userOrder(@Body userOrder: UserOrder): Response<OrderDto>
 
     @GET("product")
-    suspend fun getProducts(): Response<ArrayList<Product>>
+    suspend fun getProducts(): Response<List<Product>>
 
 }

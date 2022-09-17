@@ -2,16 +2,12 @@ package com.banquemisr.coffeeapp_banquemisr.di
 
 import android.content.Context
 import androidx.room.Room
-import com.banquemisr.coffeeapp_banquemisr.data.db.CartDB
-import com.banquemisr.coffeeapp_banquemisr.data.db.CartDao
-import com.banquemisr.coffeeapp_banquemisr.data.db.CartRepo
-import com.banquemisr.coffeeapp_banquemisr.data.remote.ApiService
-import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants
-import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants.BASE_URL
-import com.banquemisr.coffeeapp_banquemisr.data.repo.SignInRepository
+import com.banquemisr.coffeeapp_banquemisr.common.Constants
+import com.banquemisr.coffeeapp_banquemisr.common.Constants.BASE_URL
 import com.banquemisr.coffeeapp_banquemisr.common.OAuthInterceptor
 import com.banquemisr.coffeeapp_banquemisr.common.PreferencesManager
-import com.banquemisr.coffeeapp_banquemisr.data.repo.SignUpRepository
+import com.banquemisr.coffeeapp_banquemisr.data.db.CartDB
+import com.banquemisr.coffeeapp_banquemisr.data.remote.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,23 +21,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
-    @Provides
-    @Singleton
-    fun provideSignInRepository(apiService: ApiService): SignInRepository {
-        return SignInRepository(apiService)
-
-    }
-
-    @Provides
-    @Singleton
-    fun provideSignUpRepository(apiService: ApiService): SignUpRepository {
-        return SignUpRepository(apiService)
-
-    }
-
-    @Provides
-    @Singleton
-    fun provideCartRepo(dao: CartDao, apiService: ApiService) = CartRepo(dao, apiService)
 
 
     @Provides
@@ -63,12 +42,11 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideRetrofit(preferencesManager: PreferencesManager): Retrofit {
+    fun provideRetrofit(): Retrofit {
         val client = OkHttpClient.Builder()
             .addInterceptor(
                 OAuthInterceptor(
-                    "Bearer",
-                    preferencesManager.getString(Constants.KEY_TOKEN).toString()
+                    Constants.TOKEN
                 )
             )
             .build()

@@ -10,7 +10,7 @@ import androidx.core.view.GravityCompat
 import com.banquemisr.coffeeapp_banquemisr.R
 import com.banquemisr.coffeeapp_banquemisr.common.PreferencesManager
 import com.banquemisr.coffeeapp_banquemisr.common.showToast
-import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants
+import com.banquemisr.coffeeapp_banquemisr.common.Constants
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivityMainBinding
 import com.banquemisr.coffeeapp_banquemisr.domain.model.Coffee
 import com.banquemisr.coffeeapp_banquemisr.presentation.cart.CartFragment

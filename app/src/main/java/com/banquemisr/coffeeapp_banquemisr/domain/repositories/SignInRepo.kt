@@ -5,5 +5,5 @@ import com.banquemisr.coffeeapp_banquemisr.domain.model.UserLogIn
 import retrofit2.Response
 
 interface SignInRepo {
-   suspend fun getSignInResponseData(user: UserLogIn) : Response<SignInDto>
+   suspend fun signIn(user: UserLogIn) : Response<SignInDto>
 }

@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.banquemisr.coffeeapp_banquemisr.common.PreferencesManager
-import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants
+import com.banquemisr.coffeeapp_banquemisr.common.Constants
 import com.banquemisr.coffeeapp_banquemisr.databinding.FragmentProfileBinding
 import com.banquemisr.coffeeapp_banquemisr.presentation.signin.SignInActivity
 

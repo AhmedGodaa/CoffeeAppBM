@@ -18,10 +18,10 @@ class SignInViewModel @Inject constructor(private val signInRepository: SignInRe
     private var _mutableSignInResponse = MutableLiveData<SignInDto>()
     val signInResponse: LiveData<SignInDto> = _mutableSignInResponse
 
-    fun getLoginResponseLiveData(user: UserLogIn) =
+    fun signIn(user: UserLogIn) =
 
         viewModelScope.launch {
-            val response = signInRepository.getSignInResponseData(user)
+            val response = signInRepository.signIn(user)
             if (response.isSuccessful) {
                 _mutableSignInResponse.value = response.body()
             }

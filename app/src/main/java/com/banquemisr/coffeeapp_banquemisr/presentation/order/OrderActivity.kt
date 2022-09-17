@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants
+import com.banquemisr.coffeeapp_banquemisr.common.Constants
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivityOrderBinding
 import com.banquemisr.coffeeapp_banquemisr.domain.model.CoffeeOrder
 import com.banquemisr.coffeeapp_banquemisr.presentation.cart.CartViewModel

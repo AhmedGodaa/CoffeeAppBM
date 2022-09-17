@@ -13,7 +13,7 @@ class SignInRepository @Inject constructor(private val apiService: ApiService) :
 
 
 
-    override suspend fun getSignInResponseData(user: UserLogIn): Response<SignInDto> {
+    override suspend fun signIn(user: UserLogIn): Response<SignInDto> {
         return apiService.signIn(user)
     }
 

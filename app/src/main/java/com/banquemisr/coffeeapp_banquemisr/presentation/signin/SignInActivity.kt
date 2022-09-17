@@ -7,7 +7,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.banquemisr.coffeeapp_banquemisr.common.PreferencesManager
 import com.banquemisr.coffeeapp_banquemisr.common.showToast
-import com.banquemisr.coffeeapp_banquemisr.data.remote.Constants
+import com.banquemisr.coffeeapp_banquemisr.common.Constants
 import com.banquemisr.coffeeapp_banquemisr.databinding.ActivitySignInBinding
 import com.banquemisr.coffeeapp_banquemisr.domain.model.UserLogIn
 import com.banquemisr.coffeeapp_banquemisr.presentation.main.MainActivity
@@ -59,19 +59,13 @@ class SignInActivity : AppCompatActivity() {
         val password = binding.inputPassword.text.toString()
         val email = binding.inputEmail.text.toString()
         val user = UserLogIn(email = email, password = password)
-        val signInDto = viewModel.signInResponse.value
-        viewModel.getLoginResponseLiveData(user)
-
-
-        preferencesManager.putString(
-            Constants.KEY_TOKEN, signInDto?.token
-                .toString()
-        )
-        Constants.TOKEN = signInDto?.token.toString()
-        if (Constants.loginFlag) {
+        viewModel.signIn(user)
+        if (viewModel.signInResponse.value != null) {
+            val signInDto = viewModel.signInResponse.value
+            preferencesManager.putString(Constants.KEY_TOKEN, signInDto?.token.toString())
+            Constants.TOKEN = signInDto?.token.toString()
             preferencesManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true)
             val intent = Intent(this, MainActivity::class.java)
-            preferencesManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
@@ -81,3 +75,6 @@ class SignInActivity : AppCompatActivity() {
 
 
 }
+
+
+
